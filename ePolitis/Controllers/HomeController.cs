@@ -10,6 +10,7 @@ namespace ePolitis.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 

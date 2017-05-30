@@ -157,6 +157,14 @@
     <Compile Include="Migrations\201705282237107_init.Designer.cs">
       <DependentUpon>201705282237107_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705301815105_change 0.cs" />
+    <Compile Include="Migrations\201705301815105_change 0.Designer.cs">
+      <DependentUpon>201705301815105_change 0.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705301906259_change 1.cs" />
+    <Compile Include="Migrations\201705301906259_change 1.Designer.cs">
+      <DependentUpon>201705301906259_change 1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UnemploymentRequests.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -201,6 +209,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\IndexOld.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -224,6 +233,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201705282237107_init.resx">
       <DependentUpon>201705282237107_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705301815105_change 0.resx">
+      <DependentUpon>201705301815105_change 0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705301906259_change 1.resx">
+      <DependentUpon>201705301906259_change 1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

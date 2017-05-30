@@ -21,13 +21,13 @@ namespace ePolitis.Models
         public bool IsCivilServant { get; set; }
         public bool IsUnemployed { get; set; }
 
-        [ForeignKey("Unemployed")]
-        public int UnemployedId { get; set; }
-        public virtual Unemployed Unemployed { get; set; }
+        //[ForeignKey("Unemployed")]
+        //public int AfmUn { get; set; }
+        //public virtual Unemployed Unemployed { get; set; }
 
-        [ForeignKey("Unemployed")]
-        public int EmployeeId { get; set; }
-        public virtual Employee Employee { get; set; }
+        //[ForeignKey("Employee")]
+        //public int AfmEmpl { get; set; }
+        //public virtual Employee Employee { get; set; }
 
     }
 }

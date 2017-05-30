@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Web;
 
@@ -9,7 +10,7 @@ namespace ePolitis.Models
     public class Unemployed
     {
         [Key]
-        public int Id { get; set; }
+        public int Afm { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public string FathersName { get; set; }
@@ -17,7 +18,7 @@ namespace ePolitis.Models
         public string Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public int Ama { get; set; }
-        public int Afm { get; set; }
+
         public long Amka { get; set; }
         public string BirthLocation { get; set; }
         public string Country { get; set; }
@@ -38,5 +39,9 @@ namespace ePolitis.Models
         public string County { get; set; }
 
         public string FileApplicationPath { get; set; }
+
+        [ForeignKey("User")]
+        public string Email { get; set; }
+        public virtual User User { get; set; }
     }
 }

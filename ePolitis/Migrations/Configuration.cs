@@ -1,5 +1,6 @@
 namespace ePolitis.Migrations
 {
+    using ePolitis.Models;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
@@ -26,6 +27,29 @@ namespace ePolitis.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
+
+           // context.Unemployeds.AddOrUpdate(
+           //    x => x.Afm  ,
+           //    new Unemployed { Afm=123456789, },
+           //    new Unemployed { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
+           //    new Unemployed { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
+           //);
+
+           // context.Employees.AddOrUpdate(
+           //    x => x.Email,
+           //    new Employee { Email = "kaiti@gmail.com", Password = "12345", FirstName = "Kaitoula", LastName = "Kenourgiou", IsCivilServant = true },
+           //    new Employee { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
+           //    new Employee { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
+           //);
+
+            context.Users.AddOrUpdate(
+               x => x.Email,
+               new User { Email = "kaiti@gmail.com", Password = "12345", FirstName="Kaitoula", LastName="Kenourgiou", IsCivilServant=true },
+               new User { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
+               new User { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
+           );
+
+            context.SaveChanges();
         }
     }
 }
