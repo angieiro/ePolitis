@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ePolitis.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +9,12 @@ namespace ePolitis.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
-        {
+        private MyModel db = new MyModel();
 
-            return View();
+        public ActionResult TestIndex()
+        {
+            var users = db.Users.ToList();
+            return View(users);
         }
 
         public ActionResult About()
