@@ -37,6 +37,8 @@ namespace ePolitis.Models
         public int AreaCode { get; set; }
         public string County { get; set; }
 
+        public string FileApplicationPath { get; set; }
+
         [ForeignKey("User")]
         public string Email { get; set; }
         public virtual User User { get; set; }

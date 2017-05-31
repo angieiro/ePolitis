@@ -165,6 +165,10 @@
     <Compile Include="Migrations\201705301906259_change 1.Designer.cs">
       <DependentUpon>201705301906259_change 1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705310902352_change 2.cs" />
+    <Compile Include="Migrations\201705310902352_change 2.Designer.cs">
+      <DependentUpon>201705310902352_change 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UnemploymentRequests.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -239,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705301906259_change 1.resx">
       <DependentUpon>201705301906259_change 1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705310902352_change 2.resx">
+      <DependentUpon>201705310902352_change 2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
