@@ -25,6 +25,8 @@ namespace ePolitis.Models
         public virtual DbSet<Unemployed> Unemployeds { get; set; }
 
         public virtual DbSet<User> Users { get; set; }
+
+        public virtual DbSet<UnemploymentRequest> UnemploymentRequests { get; set; }
     }
 
     //public class MyEntity

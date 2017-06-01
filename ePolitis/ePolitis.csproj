@@ -169,6 +169,10 @@
     <Compile Include="Migrations\201705310902352_change 2.Designer.cs">
       <DependentUpon>201705310902352_change 2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201706011055197_change 3.cs" />
+    <Compile Include="Migrations\201706011055197_change 3.Designer.cs">
+      <DependentUpon>201706011055197_change 3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\UnemploymentRequests.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -211,10 +215,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\IndexOld.cshtml" />
     <Content Include="Views\Home\TestIndex.cshtml" />
+    <Content Include="Views\Home\SignIn.cshtml" />
+    <Content Include="Views\Home\Register.cshtml" />
+    <Content Include="Views\Home\EmployeePersonalInfoCreate.cshtml" />
+    <Content Include="Views\Home\UnemployedPersonalInfoCreate.cshtml" />
+    <Content Include="Views\Home\EmployeePersonalInfoDisplay.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -246,6 +252,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705310902352_change 2.resx">
       <DependentUpon>201705310902352_change 2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706011055197_change 3.resx">
+      <DependentUpon>201706011055197_change 3.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
