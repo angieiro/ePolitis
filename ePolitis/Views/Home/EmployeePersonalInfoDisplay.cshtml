@@ -1,8 +1,39 @@
-﻿
+﻿@model ePolitis.Models.Employee
 @{
     ViewBag.Title = "EmployeePersonalInfoDisplay";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>EmployeePersonalInfoDisplay</h2>
+<h1>EmployeePersonalInfoDisplay</h1>
 
+<h2>
+    Προσωπικά στοιχεία<br>
+    ΙΚΑ
+</h2>
+<form>
+    <h1>Στοιχεία Συναλλασσομένου</h1>
+
+    <div class="contentform">
+        <div id="sendmessage"> Τα στοιχεία σας καταχωρήθηκαν με επιτυχία </div>
+        <div class="form-group">
+            <p>Αριθμός μητρώου ΙΚΑ: @Model.Ama</p> 
+            <p>Όνομα: @Model.FirstName</p> 
+            <p>Επώνυμο: @Model.LastName</p>
+        </div>
+    </div>
+</form>
+<form>
+    <h1>Βασικά στοιχεία</h1>
+
+    <div class="contentform">
+        <div id="sendmessage"> Τα στοιχεία σας καταχωρήθηκαν με επιτυχία </div>
+        <div class="form-group">
+            <p>Ημερομηνία γέννησης: @Model.DateOfBirth</p>
+            <p>Εθνικότητα: @Model.Nationality</p>
+            <p>Αριθμός Ταυτότητας: @Model.IdNumber</p>
+            <p>Αριθμός Διαβατηρίου: @Model.PassportNumber</p>
+            <p>ΑΦΜ: @Model.Afm</p>
+            <p>ΑΜΚΑ: @Model.Amka</p>
+        </div>
+    </div>
+</form>

@@ -33,11 +33,11 @@ namespace ePolitis.Controllers
                 db.SaveChanges();
                 if (user.IsUnemployed)
                 {
-                    return RedirectToAction("UnemployedPersonalInfoCreate");
+                    return RedirectToAction("UnemployedPersonalInfoCreate", user);
                 }
                 else
                 {
-                    return RedirectToAction("EmployeePersonalInfoCreate");
+                    return RedirectToAction("EmployeePersonalInfoCreate", user);
 
                 }
 
@@ -68,7 +68,7 @@ namespace ePolitis.Controllers
             {
                 Session.Add("Email", user.Email);
                 //return View("ListIndex");
-                return RedirectToAction("TestIndex");
+                return RedirectToAction("TestIndex", user);
             }
             else
             {
@@ -78,43 +78,48 @@ namespace ePolitis.Controllers
 
         }
 
-        public ActionResult UnemployedPersonalInfoCreate()
+        public ActionResult UnemployedPersonalInfoCreate(User user)
         {
-            return View();
+            Unemployed currentUser = new Unemployed();
+            currentUser.Email = user.Email;
+            currentUser.FirstName = user.FirstName;
+            currentUser.LastName = user.LastName;
+
+            return View(currentUser);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult UnemployedPersonalInfoCreate(Unemployed user)
+        public ActionResult UnemployedPersonalInfoCreate(Unemployed unemployed)
         {
 
             Unemployed currentUser = new Models.Unemployed();
 
-            currentUser.FirstName = currentUser.FirstName;
-            currentUser.LastName = currentUser.LastName;
-            currentUser.Email = currentUser.Email;
-            currentUser.FathersName = currentUser.FathersName;
-            currentUser.MothersName = currentUser.MothersName;
-            currentUser.Gender = currentUser.Gender;
-            currentUser.DateOfBirth = currentUser.DateOfBirth;
-            currentUser.Afm = currentUser.Afm;
-            currentUser.Ama = currentUser.Ama;
-            currentUser.Amka = currentUser.Amka;
-            currentUser.BirthLocation = currentUser.BirthLocation;
-            currentUser.Country = currentUser.Country;
-            currentUser.Nationality = currentUser.Nationality;
-            currentUser.IdNumber = currentUser.IdNumber;
-            currentUser.PassportNumber = currentUser.PassportNumber;
-            currentUser.Phone = currentUser.Phone;
-            currentUser.MobilePhone = currentUser.MobilePhone;
-            currentUser.AddressStreet = currentUser.AddressStreet;
-            currentUser.AddressNumber = currentUser.AddressNumber;
-            currentUser.Area = currentUser.Area;
-            currentUser.City = currentUser.City;
-            currentUser.AreaCode = currentUser.AreaCode;
-            currentUser.County = currentUser.County;
-            currentUser.AmOaed = currentUser.AmOaed;
-            currentUser.CardOaed = currentUser.CardOaed;
+            currentUser.FirstName = unemployed.FirstName;
+            currentUser.LastName = unemployed.LastName;
+            currentUser.Email = unemployed.Email;
+            currentUser.FathersName = unemployed.FathersName;
+            currentUser.MothersName = unemployed.MothersName;
+            currentUser.Gender = unemployed.Gender;
+            currentUser.DateOfBirth = unemployed.DateOfBirth;
+            currentUser.Afm = unemployed.Afm;
+            currentUser.Ama = unemployed.Ama;
+            currentUser.Amka = unemployed.Amka;
+            currentUser.BirthLocation = unemployed.BirthLocation;
+            currentUser.Country = unemployed.Country;
+            currentUser.Nationality = unemployed.Nationality;
+            currentUser.IdNumber = unemployed.IdNumber;
+            currentUser.PassportNumber = unemployed.PassportNumber;
+            currentUser.Phone = unemployed.Phone;
+            currentUser.MobilePhone = unemployed.MobilePhone;
+            currentUser.AddressStreet = unemployed.AddressStreet;
+            currentUser.AddressNumber = unemployed.AddressNumber;
+            currentUser.Area = unemployed.Area;
+            currentUser.City = unemployed.City;
+            currentUser.AreaCode = unemployed.AreaCode;
+            currentUser.County = unemployed.County;
+            currentUser.AmOaed = unemployed.AmOaed;
+            currentUser.CardOaed = unemployed.CardOaed;
 
             db.Unemployeds.Add(currentUser);
             db.SaveChanges();
@@ -124,52 +129,57 @@ namespace ePolitis.Controllers
 
         }
 
-        public ActionResult EmployeePersonalInfoCreate()
-        {
-            return View();
-        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EmployeePersonalInfoCreate(Employee user)
+        public ActionResult EmployeePersonalInfoCreate(Employee employee)
         {
+            Employee currentUser = new Employee();
 
-            Employee currentUser = new Models.Employee();
+            currentUser.Afm = employee.Afm;
 
-            currentUser.FirstName = currentUser.FirstName;
-            currentUser.LastName = currentUser.LastName;
-            currentUser.Email = currentUser.Email;
-            currentUser.FathersName = currentUser.FathersName;
-            currentUser.MothersName = currentUser.MothersName;
-            currentUser.Gender = currentUser.Gender;
-            currentUser.DateOfBirth = currentUser.DateOfBirth;
-            currentUser.Afm = currentUser.Afm;
-            currentUser.Ama = currentUser.Ama;
-            currentUser.Amka = currentUser.Amka;
-            currentUser.BirthLocation = currentUser.BirthLocation;
-            currentUser.Country = currentUser.Country;
-            currentUser.Nationality = currentUser.Nationality;
-            currentUser.IdNumber = currentUser.IdNumber;
-            currentUser.PassportNumber = currentUser.PassportNumber;
-            currentUser.Phone = currentUser.Phone;
-            currentUser.MobilePhone = currentUser.MobilePhone;
-            currentUser.AddressStreet = currentUser.AddressStreet;
-            currentUser.AddressNumber = currentUser.AddressNumber;
-            currentUser.Area = currentUser.Area;
-            currentUser.City = currentUser.City;
-            currentUser.AreaCode = currentUser.AreaCode;
-            currentUser.County = currentUser.County;
-            currentUser.WorkPhone = currentUser.WorkPhone;
+            currentUser.FirstName = employee.FirstName;
+            currentUser.LastName = employee.LastName;
+            currentUser.Email = employee.Email;
+            currentUser.FathersName = employee.FathersName;
+            currentUser.MothersName = employee.MothersName;
+            currentUser.Gender = employee.Gender;
+            currentUser.DateOfBirth = employee.DateOfBirth;
+
+            currentUser.Ama = employee.Ama;
+            currentUser.Amka = employee.Amka;
+            currentUser.BirthLocation = employee.BirthLocation;
+            currentUser.Country = employee.Country;
+            currentUser.Nationality = employee.Nationality;
+            currentUser.IdNumber = employee.IdNumber;
+            currentUser.PassportNumber = employee.PassportNumber;
+            currentUser.Phone = employee.Phone;
+            currentUser.MobilePhone = employee.MobilePhone;
+            currentUser.AddressStreet = employee.AddressStreet;
+            currentUser.AddressNumber = employee.AddressNumber;
+            currentUser.Area = employee.Area;
+            currentUser.City = employee.City;
+            currentUser.AreaCode = employee.AreaCode;
+            currentUser.County = employee.County;
+            currentUser.WorkPhone = employee.WorkPhone;
 
             db.Employees.Add(currentUser);
             db.SaveChanges();
-            //return View("ListIndex");
             return RedirectToAction("TestIndex");
         }
 
-        public ActionResult EmployeePersonalInfoDisplay(Employee user)
+        public ActionResult EmployeePersonalInfoCreate(User user)
         {
-            return View(user);
+            Employee currentUser = new Employee();
+            currentUser.Email = user.Email;
+            currentUser.FirstName = user.FirstName;
+            currentUser.LastName = user.LastName;
+
+            return View(currentUser);
         }
+        //public ActionResult EmployeePersonalInfoDisplay(Employee user)
+        //{
+        //    return View(user);
+        //}
     }
 }
