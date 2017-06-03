@@ -149,7 +149,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\UnemployedController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -230,9 +232,10 @@
     <Content Include="Views\Home\TestIndex.cshtml" />
     <Content Include="Views\Home\SignIn.cshtml" />
     <Content Include="Views\Home\Register.cshtml" />
-    <Content Include="Views\Home\EmployeePersonalInfoCreate.cshtml" />
-    <Content Include="Views\Home\UnemployedPersonalInfoCreate.cshtml" />
-    <Content Include="Views\Home\EmployeePersonalInfoDisplay.cshtml" />
+    <Content Include="Views\Unemployed\PersonalInfoCreate.cshtml" />
+    <Content Include="Views\Employee\PersonalInfoCreate.cshtml" />
+    <Content Include="Views\Employee\Index.cshtml" />
+    <Content Include="Views\Unemployed\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

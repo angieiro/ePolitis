@@ -1,24 +1,241 @@
 ﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+    margin: auto;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('img/PolitisCard.jpg');
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+.info p {
+    text-align: center;
+    color: #999;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 2px
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.info i {
+    color: #F6AA93;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
+form h1 {
+    font-size: 18px;
+    background: #008B8B none repeat scroll 0% 0%;
+    color: rgb(255, 255, 255);
+    padding: 22px 25px;
+    border-radius: 5px 5px 5px 5px;
+    margin: auto;
+    text-shadow: none;
+    text-align: left
+}
+
+form {
+    background-color: white;
+    border-radius: 5px;
+    max-width: 700px;
+    width: 100%;
+    margin: 5% auto;
+    overflow: hidden;
+}
+
+p span {
+    color: #F00;
+}
+
+p {
+    margin: 0px;
+    font-weight: 500;
+    line-height: 2;
+    color: #333;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 0px #20B2AA;
+    margin: 50px 0px 0px 0px
+}
+
+input {
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    width: 75%;
+    height: 40px;
+    float: left;
+    padding: 0px 15px;
+}
+
+a {
+    text-decoration: inherit
+}
+
 textarea {
-    max-width: 280px;
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #EEE;
+    margin: 0;
+    width: 75%;
+    height: 130px;
+    float: left;
+    padding: 0px 15px;
+}
+
+.form-group {
+    overflow: hidden;
+    clear: both;
+}
+
+.form-control {
+    border-radius: 5px 5px 5px 5px;
+    border: 1px solid #eee;
+    margin-bottom: 15px;
+    width: 75%;
+    height: 40px;
+    float: left;
+    padding: 0px 15px;
+}
+
+.icon-case {
+    width: 35px;
+    float: left;
+    border-radius: 5px 5px 5px 5px;
+    background: #eeeeee;
+    height: 42px;
+    position: relative;
+    text-align: center;
+    line-height: 40px;
+}
+
+i {
+    color: #555;
+}
+
+.contentform {
+    padding: 40px 30px;
+}
+
+.bouton-contact {
+    background-color: #008B8B;
+    color: #FFF;
+    text-align: center;
+    width: 100%;
+    border: 0;
+    padding: 17px 25px;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.checkbox2 {
+    display: inline-block;
+    width: 19px;
+    height: 19px;
+    background: url(check_radio_sheet.png) left top no-repeat;
+}
+
+.button2 {
+    background-color: #5F9EA0;
+    color: #FFF;
+    text-align: center;
+    width: 60%;
+    border: 0;
+    padding: 17px 25px;
+    border-radius: 5px 5px 5px 5px;
+    cursor: pointer;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.leftcontact {
+    width: 49.5%;
+    float: left;
+    border-right: 1px dotted #CCC;
+    box-sizing: border-box;
+    padding: 0px 15px 0px 0px;
+}
+
+.rightcontact {
+    width: 49.5%;
+    float: right;
+    box-sizing: border-box;
+    padding: 0px 0px 0px 15px;
+}
+
+.validation {
+    display: none;
+    margin: 0 0 10px;
+    font-weight: 400;
+    font-size: 13px;
+    color: #DE5959;
+}
+
+#sendmessage {
+    border: 1px solid #fff;
+    display: none;
+    text-align: center;
+    margin: 10px 0;
+    font-weight: 600;
+    margin-bottom: 30px;
+    background-color: #EBF6E0;
+    color: #5F9025;
+    border: 1px solid #B3DC82;
+    padding: 13px 40px 13px 18px;
+    border-radius: 3px;
+    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
+}
+
+    #sendmessage.show, .show {
+        display: block;
+    }
+/* Dropdown Button */
+.dropbtn {
+    background-color: #008B8B;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px 5px 5px 5px;
+    min-width: 300px;
+    min-height: 80px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #5F9EA0;
+    min-width: 300px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px 5px 5px 5px;
+}
+
+    /* Links inside the dropdown */
+    .dropdown-content a {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+        /* Change color of dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #D3D3D3
+        }
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
 }
