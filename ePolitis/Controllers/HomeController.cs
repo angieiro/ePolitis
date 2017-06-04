@@ -91,17 +91,17 @@ namespace ePolitis.Controllers
             {
                 Session.Add("Email", user.Email);
                 //return View("ListIndex");
-                if (user.IsUnemployed)
+                if (currentUser.IsUnemployed)
                 {
                     Unemployed unemployeeUser = new Unemployed();
-                    unemployeeUser = db.Unemployeds.Single(x => x.Email == user.Email);
-                    return RedirectToAction("Index", "Employee", unemployeeUser);
+                    unemployeeUser = db.Unemployeds.Single(x => x.Email == currentUser.Email);
+                    return RedirectToAction("Index", "Unemployed", unemployeeUser);
                 }
                 else
                 {
                     Employee employeeUser = new Employee();
-                    employeeUser = db.Employees.Single(x => x.Email == user.Email);
-                    return RedirectToAction("Index", "Unemployed", employeeUser);
+                    employeeUser = db.Employees.Single(x => x.Email == currentUser.Email);
+                    return RedirectToAction("Index", "Employee", employeeUser);
 
                 }
 
