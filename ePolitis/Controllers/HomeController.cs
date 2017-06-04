@@ -17,6 +17,35 @@ namespace ePolitis.Controllers
             return View(users);
         }
 
+        public ActionResult IKAEkdosiAMA()
+        {
+            return View();
+        }
+
+        public ActionResult IKAEkdosiVivliariouYgeias()
+        {
+            return View();
+        }
+
+        public ActionResult OAEDBenefitFeatures()
+        {
+            return View();
+        }
+
+        public ActionResult OAEDEggrafiMitrwo()
+        {
+            return View();
+        }
+
+        public ActionResult OAEDEpidomaAnergias()
+        {
+            return View();
+        }
+
+        public ActionResult OAEDUploadpage()
+        {
+            return View();
+        }
 
         public ActionResult Register()
         {

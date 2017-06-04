@@ -1,8 +1,40 @@
-﻿
+﻿@model ePolitis.Models.Unemployed
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+@Html.Partial("_Header")
 
-<h2>Index</h2>
+
+    <h1>
+        Προσωπικά στοιχεία<br>
+        ΟΑΕΔ
+    </h1>
+    <form>
+        <h1>Στοιχεία Συναλλασσομένου</h1>
+
+        <div class="contentform">
+            <div class="form-group">
+                <p>Αριθμός μητρώου ΟΑΕΔ: @Model.AmOaed</p> 
+                <p>Όνομα: @Model.FirstName</p> 
+                <p>Επώνυμο: @Model.LastName</p>
+            </div>
+        </div>
+    </form>
+    <form>
+        <h1>Βασικά στοιχεία</h1>
+
+        <div class="contentform">
+
+            <div class="form-group">
+                <p>Ημερομηνία γέννησης: @Model.DateOfBirth</p>
+                <p>Εθνικότητα: @Model.Nationality</p> 
+                <p>Αριθμός Ταυτότητας: @Model.IdNumber</p>
+                <p>Αριθμός Διαβατηρίου: @Model.PassportNumber</p>
+                <p>ΑΦΜ: @Model.Afm</p>
+                <p>ΑΜΚΑ: @Model.Amka</p>
+            </div>
+        </div>
+    </form>
+
 

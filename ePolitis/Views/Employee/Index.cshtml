@@ -1,9 +1,9 @@
 ﻿@model ePolitis.Models.Employee
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";    
 }
-
+@Html.Partial("_Header")
 
 <h1>Προσωπικά στοιχεία<br>
     ΙΚΑ</h1>
@@ -12,7 +12,6 @@
     <h1>Στοιχεία Συναλλασσομένου</h1>
 
     <div class="contentform">
-        @*<div id="sendmessage"> Τα στοιχεία σας καταχωρήθηκαν με επιτυχία </div>*@
         <div class="form-group">
             <p>Αριθμός μητρώου ΙΚΑ: @Model.Ama</p>
             <p>Όνομα: @Model.FirstName</p>
@@ -24,7 +23,6 @@
     <h1>Βασικά στοιχεία</h1>
 
     <div class="contentform">
-        <div id="sendmessage"> Τα στοιχεία σας καταχωρήθηκαν με επιτυχία </div>
         <div class="form-group">
             <p>Ημερομηνία γέννησης: @Model.DateOfBirth</p>
             <p>Εθνικότητα: @Model.Nationality</p>

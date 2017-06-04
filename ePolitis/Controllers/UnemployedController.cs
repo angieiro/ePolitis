@@ -12,9 +12,9 @@ namespace ePolitis.Controllers
         private MyModel db = new MyModel();
 
         // GET: Unemployed
-        public ActionResult Index()
+        public ActionResult Index(Unemployed unemployed)
         {
-            return View();
+            return View(unemployed);
         }
 
 
