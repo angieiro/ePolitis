@@ -244,6 +244,7 @@
     <Content Include="Views\Home\OAEDEggrafiMitrwo.cshtml" />
     <Content Include="Views\Home\OAEDEpidomaAnergias.cshtml" />
     <Content Include="Views\Home\OAEDUploadpage.cshtml" />
+    <Content Include="Views\Shared\_EmployeeHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

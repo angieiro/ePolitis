@@ -64,10 +64,15 @@ namespace ePolitis.Controllers
             db.Unemployeds.Add(currentUser);
             db.SaveChanges();
             //return View("ListIndex");
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", currentUser);
 
 
         }
 
+
+        public ActionResult OAEDBenefitFeatures()
+        {
+            return View();
+        }
     }
 }

@@ -17,6 +17,7 @@ namespace ePolitis.Controllers
             return View(users);
         }
 
+        //IKA Services
         public ActionResult IKAEkdosiAMA()
         {
             return View();
@@ -27,11 +28,7 @@ namespace ePolitis.Controllers
             return View();
         }
 
-        public ActionResult OAEDBenefitFeatures()
-        {
-            return View();
-        }
-
+        //OAED Services
         public ActionResult OAEDEggrafiMitrwo()
         {
             return View();
@@ -42,10 +39,7 @@ namespace ePolitis.Controllers
             return View();
         }
 
-        public ActionResult OAEDUploadpage()
-        {
-            return View();
-        }
+
 
         public ActionResult Register()
         {
@@ -97,7 +91,20 @@ namespace ePolitis.Controllers
             {
                 Session.Add("Email", user.Email);
                 //return View("ListIndex");
-                return RedirectToAction("TestIndex", user);
+                if (user.IsUnemployed)
+                {
+                    Unemployed unemployeeUser = new Unemployed();
+                    unemployeeUser = db.Unemployeds.Single(x => x.Email == user.Email);
+                    return RedirectToAction("Index", "Employee", unemployeeUser);
+                }
+                else
+                {
+                    Employee employeeUser = new Employee();
+                    employeeUser = db.Employees.Single(x => x.Email == user.Email);
+                    return RedirectToAction("Index", "Unemployed", employeeUser);
+
+                }
+
             }
             else
             {

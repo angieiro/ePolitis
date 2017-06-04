@@ -62,9 +62,12 @@ namespace ePolitis.Controllers
 
             db.Employees.Add(currentUser);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", currentUser);
         }
 
-
+        public ActionResult OAEDUploadpage()
+        {
+            return View();
+        }
     }
 }
