@@ -3,24 +3,24 @@
 <div class="dropdown">
     <button class="dropbtn">Υπηρεσίες ΟΑΕΔ</button>
     <div class="dropdown-content">
-        <a href="#">Προνόμια ανέργων</a>
-        <a href="#">Εγγραφή στο Μητρώο</a>
-        <a href="#">Δικαιολογητικά για επίδομα</a>
+        <a href="@Url.Action("OAEDBenefitFeatures","Unemployed")">Προνόμια ανέργων</a>
+        <a href="@Url.Action("OAEDEpidomaAnergias","Home")">Εγγραφή στο Μητρώο</a>
+        <a href="@Url.Action("OAEDEpidomaAnergias","Home")">Δικαιολογητικά για επίδομα</a>
     </div>
 </div>
 <div class="dropdown">
     <button class="dropbtn">Υπηρεσίες ΙΚΑ</button>
     <div class="dropdown-content">
-        <a href="#">Δικαιολογητικά ΑΜΑ</a>
-        <a href="#">Έκδοση Βιβλιαρίου</a>
+        <a href="@Url.Action("IKAEkdosiAMA","Home")">Δικαιολογητικά ΑΜΑ</a>
+        <a href="@Url.Action("IKAEkdosiVivliariouYgeias","Home")">Έκδοση Βιβλιαρίου</a>
     </div>
 </div>
 <div class="dropdown" style="float:right;">
     <button class="dropbtn">Λογαριασμός</button>
     <div class="dropdown-content">
-        <a href="#">Προσωπικά στοιχεία</a>
-        <a href="#">Επεξεργασία προσωπικών στοιχείων</a>
-        <a href="#">Έξοδος</a>
+        <a href="@Url.Action("Index","Unemployed")">Προσωπικά στοιχεία</a>
+        <a href="@Url.Action("PersonalInfoCreate","Unemployed")">Επεξεργασία προσωπικών στοιχείων</a>
+        <a href="@Url.Action("SignOut","Home")">Έξοδος</a>
     </div>
 </div>
 

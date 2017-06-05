@@ -28,6 +28,8 @@ namespace ePolitis.Controllers
             return View(currentUser);
         }
 
+        //Update PersonalInfoCreate so as to update changes to existed unemployed users as well
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PersonalInfoCreate(Unemployed unemployed)

@@ -188,6 +188,7 @@
       <DependentUpon>201706021001033_change 6.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\History.cs" />
     <Compile Include="Models\UnemploymentRequests.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\MyModel.cs" />
@@ -240,11 +241,12 @@
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Home\IKAEkdosiAMA.cshtml" />
     <Content Include="Views\Home\IKAEkdosiVivliariouYgeias.cshtml" />
-    <Content Include="Views\Home\OAEDBenefitFeatures.cshtml" />
+    <Content Include="Views\Unemployed\OAEDBenefitFeatures.cshtml" />
     <Content Include="Views\Home\OAEDEggrafiMitrwo.cshtml" />
     <Content Include="Views\Home\OAEDEpidomaAnergias.cshtml" />
-    <Content Include="Views\Home\OAEDUploadpage.cshtml" />
+    <Content Include="Views\Employee\OAEDUploadpage.cshtml" />
     <Content Include="Views\Shared\_EmployeeHeader.cshtml" />
+    <Content Include="Views\Home\SignOut.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

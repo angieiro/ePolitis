@@ -27,6 +27,7 @@ namespace ePolitis.Controllers
             return View(currentUser);
         }
 
+        //Update PersonalInfoCreate so as to update changes to existed employees as well
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PersonalInfoCreate(Employee employee)
