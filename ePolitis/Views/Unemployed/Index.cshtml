@@ -10,13 +10,14 @@
         Προσωπικά στοιχεία<br>
         ΟΑΕΔ
     </h1>
-    <form>
+@if (User.Identity.IsAuthenticated)
+{ <form>
         <h1>Στοιχεία Συναλλασσομένου</h1>
 
         <div class="contentform">
             <div class="form-group">
-                <p>Αριθμός μητρώου ΟΑΕΔ: @Model.AmOaed</p> 
-                <p>Όνομα: @Model.FirstName</p> 
+                <p>Αριθμός μητρώου ΟΑΕΔ: @Model.AmOaed</p>
+                <p>Όνομα: @Model.FirstName</p>
                 <p>Επώνυμο: @Model.LastName</p>
             </div>
         </div>
@@ -28,7 +29,7 @@
 
             <div class="form-group">
                 <p>Ημερομηνία γέννησης: @Model.DateOfBirth</p>
-                <p>Εθνικότητα: @Model.Nationality</p> 
+                <p>Εθνικότητα: @Model.Nationality</p>
                 <p>Αριθμός Ταυτότητας: @Model.IdNumber</p>
                 <p>Αριθμός Διαβατηρίου: @Model.PassportNumber</p>
                 <p>ΑΦΜ: @Model.Afm</p>
@@ -36,5 +37,7 @@
             </div>
         </div>
     </form>
+}
+    
 
 

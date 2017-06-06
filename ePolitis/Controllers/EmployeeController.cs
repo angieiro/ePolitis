@@ -11,10 +11,16 @@ namespace ePolitis.Controllers
     {
         private MyModel db = new MyModel();
 
-        // GET: Employee
-        public ActionResult Index(Employee employee)
+        //[Authorize]
+        //public ActionResult Index(Employee employee)
+        //{
+        //    return View(employee);
+        //}
+
+        [Authorize]
+        public ActionResult Index()
         {
-            return View(employee);
+            return View(Session["employeeUser"]);
         }
 
         public ActionResult PersonalInfoCreate(User user)

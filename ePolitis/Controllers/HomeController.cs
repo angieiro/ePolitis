@@ -12,12 +12,12 @@ namespace ePolitis.Controllers
     {
         private MyModel db = new MyModel();
 
-        //public ActionResult TestIndex()
-        //{
-        //    _updateVisits("TestIndex");
-        //    var users = db.Users.ToList();
-        //    return View(users);
-        //}
+        public ActionResult TestIndex()
+        {
+            _updateVisits("TestIndex");
+            var users = db.Users.ToList();
+            return View(users);
+        }
 
         //IKA Services
         public ActionResult IKAEkdosiAMA()
@@ -89,8 +89,9 @@ namespace ePolitis.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult SignIn(User user)
+        public ActionResult SignInSubmit(User user)
         {
+
             _updateVisits("SignIn");
             User currentUser = db.Users.Find(user.Email);
             if (currentUser == null)
@@ -101,20 +102,24 @@ namespace ePolitis.Controllers
             if (currentUser.Password == user.Password)
             {
                 FormsAuthentication.SetAuthCookie(currentUser.LastName + currentUser.FirstName, false);
-                //Session.Add("Email", user.Email);
+                Session.Add("Email", user.Email);
                 //return View("ListIndex");
                 if (currentUser.IsUnemployed)
                 {
                     Unemployed unemployeeUser = new Unemployed();
                     unemployeeUser = db.Unemployeds.Single(x => x.Email == currentUser.Email);
+                    Session.Add("unemployeeUser", unemployeeUser);
 
-                    return RedirectToAction("Index", "Unemployed", unemployeeUser);
+                    return RedirectToAction("Index", "Unemployed");
+
                 }
                 else
                 {
                     Employee employeeUser = new Employee();
                     employeeUser = db.Employees.Single(x => x.Email == currentUser.Email);
-                    return RedirectToAction("Index", "Employee", employeeUser);
+                    Session.Add("employeeUser", employeeUser);
+
+                    return RedirectToAction("Index", "Employee");
 
                 }
 
