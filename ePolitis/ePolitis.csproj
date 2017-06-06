@@ -239,14 +239,20 @@
     <Content Include="Views\Employee\Index.cshtml" />
     <Content Include="Views\Unemployed\Index.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Home\IKAEkdosiAMA.cshtml" />
-    <Content Include="Views\Home\IKAEkdosiVivliariouYgeias.cshtml" />
     <Content Include="Views\Unemployed\OAEDBenefitFeatures.cshtml" />
-    <Content Include="Views\Home\OAEDEggrafiMitrwo.cshtml" />
-    <Content Include="Views\Home\OAEDEpidomaAnergias.cshtml" />
     <Content Include="Views\Employee\OAEDUploadpage.cshtml" />
     <Content Include="Views\Shared\_EmployeeHeader.cshtml" />
     <Content Include="Views\Home\SignOut.cshtml" />
+    <Content Include="Views\Employee\IKAEkdosiAMA.cshtml" />
+    <Content Include="Views\Employee\IKAEkdosiVivliariouYgeias.cshtml" />
+    <Content Include="Views\Employee\OAEDEggrafiMitrwo.cshtml" />
+    <Content Include="Views\Employee\OAEDEpidomaAnergias.cshtml" />
+    <Content Include="Views\Unemployed\IKAEkdosiAMA.cshtml" />
+    <Content Include="Views\Unemployed\IKAEkdosiVivliariouYgeias.cshtml" />
+    <Content Include="Views\Unemployed\OAEDEggrafiMitrwo.cshtml" />
+    <Content Include="Views\Unemployed\OAEDEpidomaAnergias.cshtml" />
+    <Content Include="Views\Employee\PersonalInfoUpdate.cshtml" />
+    <Content Include="Views\Unemployed\PersonalInfoUpdate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -11,11 +11,6 @@ namespace ePolitis.Controllers
     {
         private MyModel db = new MyModel();
 
-        //[Authorize]
-        //public ActionResult Index(Employee employee)
-        //{
-        //    return View(employee);
-        //}
 
         [Authorize]
         public ActionResult Index()
@@ -33,7 +28,7 @@ namespace ePolitis.Controllers
             return View(currentUser);
         }
 
-        //Update PersonalInfoCreate so as to update changes to existed employees as well
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PersonalInfoCreate(Employee employee)
@@ -72,8 +67,79 @@ namespace ePolitis.Controllers
             return RedirectToAction("Index", currentUser);
         }
 
+        //Update PersonalInfoCreate so as to update changes to existed employees as well
+        public ActionResult PersonalInfoUpdate()
+        {
+            return View(Session["employeeUser"]);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PersonalInfoUpdate(Employee employee)
+        {
+
+            Employee currentUser = db.Employees.SingleOrDefault(e => e.Email == employee.Email);
+
+            currentUser.Afm = employee.Afm;
+
+            currentUser.FirstName = employee.FirstName;
+            currentUser.LastName = employee.LastName;
+            currentUser.Email = employee.Email;
+            currentUser.FathersName = employee.FathersName;
+            currentUser.MothersName = employee.MothersName;
+            currentUser.Gender = employee.Gender;
+            currentUser.DateOfBirth = employee.DateOfBirth;
+
+            currentUser.Ama = employee.Ama;
+            currentUser.Amka = employee.Amka;
+            currentUser.BirthLocation = employee.BirthLocation;
+            currentUser.Country = employee.Country;
+            currentUser.Nationality = employee.Nationality;
+            currentUser.IdNumber = employee.IdNumber;
+            currentUser.PassportNumber = employee.PassportNumber;
+            currentUser.Phone = employee.Phone;
+            currentUser.MobilePhone = employee.MobilePhone;
+            currentUser.AddressStreet = employee.AddressStreet;
+            currentUser.AddressNumber = employee.AddressNumber;
+            currentUser.Area = employee.Area;
+            currentUser.City = employee.City;
+            currentUser.AreaCode = employee.AreaCode;
+            currentUser.County = employee.County;
+            currentUser.WorkPhone = employee.WorkPhone;
+
+            Session["employeeUser"] = currentUser;
+            db.SaveChanges();
+            return RedirectToAction("Index"/*, currentUser*/);
+        }
+
         public ActionResult OAEDUploadpage()
         {
+            return View();
+        }
+
+        //IKA Services
+        public ActionResult IKAEkdosiAMA()
+        {
+            //_updateVisits("IKAEkdosiAMA");
+            return View();
+        }
+
+        public ActionResult IKAEkdosiVivliariouYgeias()
+        {
+            //_updateVisits("IKAEkdosiVivliariouYgeias");
+            return View();
+        }
+
+        //OAED Services
+        public ActionResult OAEDEggrafiMitrwo()
+        {
+            //_updateVisits("OAEDEggrafiMitrwo");
+            return View();
+        }
+
+        public ActionResult OAEDEpidomaAnergias()
+        {
+            //_updateVisits("OAEDEpidomaAnergias");
             return View();
         }
     }
