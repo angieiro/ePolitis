@@ -49,6 +49,13 @@ namespace ePolitis.Migrations
                new User { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
            );
 
+            context.UnemploymentRequests.AddOrUpdate(
+               x => x.RequestId,
+               new UnemploymentRequest { RequestId = 1, Afm = 123456789, Approved = false },
+               new UnemploymentRequest { RequestId = 2, Afm = 542584, Approved = false },
+               new UnemploymentRequest { RequestId = 3, Afm = 845646465, Approved = false }
+           );
+
             context.SaveChanges();
         }
     }

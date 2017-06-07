@@ -1,15 +1,20 @@
-﻿
-@{
-    ViewBag.Title = "OAEDUploadpage";
+﻿@{
+    ViewBag.Title = "UploadFile";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Html.Partial("_EmployeeHeader")
 
 <h1>Upload εγγράφου για επιβεβαίωση ανεργίας</h1>
-<form action="" method="post" enctype="multipart/form-data">
+@using (Html.BeginForm("OAEDUploadpage", "Employee", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
     <h1>Ανέβασε το αρχείο</h1>
-    <input type="file" name="file" id="file" />
-    <input type="submit" class="button2" />
-</form>
+            <div>
+                @Html.TextBox("file", "", new { type = "file" }) <br />
+
+                <input type="submit" value="Upload" />
+
+                @ViewBag.Message
+            </div>
+}
 
 

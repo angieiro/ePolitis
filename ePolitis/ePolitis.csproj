@@ -149,6 +149,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CivilServantController.cs" />
     <Compile Include="Controllers\EmployeeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UnemployedController.cs" />
@@ -159,51 +160,32 @@
     <Compile Include="Migrations\201705282237107_init.Designer.cs">
       <DependentUpon>201705282237107_init.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705301815105_change 0.cs" />
-    <Compile Include="Migrations\201705301815105_change 0.Designer.cs">
-      <DependentUpon>201705301815105_change 0.cs</DependentUpon>
+    <Compile Include="Migrations\201706070658406_change 7.cs" />
+    <Compile Include="Migrations\201706070658406_change 7.Designer.cs">
+      <DependentUpon>201706070658406_change 7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705301906259_change 1.cs" />
-    <Compile Include="Migrations\201705301906259_change 1.Designer.cs">
-      <DependentUpon>201705301906259_change 1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201705310902352_change 2.cs" />
-    <Compile Include="Migrations\201705310902352_change 2.Designer.cs">
-      <DependentUpon>201705310902352_change 2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706011055197_change 3.cs" />
-    <Compile Include="Migrations\201706011055197_change 3.Designer.cs">
-      <DependentUpon>201706011055197_change 3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706012239544_change 4.cs" />
-    <Compile Include="Migrations\201706012239544_change 4.Designer.cs">
-      <DependentUpon>201706012239544_change 4.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706020955184_change 5.cs" />
-    <Compile Include="Migrations\201706020955184_change 5.Designer.cs">
-      <DependentUpon>201706020955184_change 5.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706021001033_change 6.cs" />
-    <Compile Include="Migrations\201706021001033_change 6.Designer.cs">
-      <DependentUpon>201706021001033_change 6.cs</DependentUpon>
+    <Compile Include="Migrations\201706070720516_change 8.cs" />
+    <Compile Include="Migrations\201706070720516_change 8.Designer.cs">
+      <DependentUpon>201706070720516_change 8.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\History.cs" />
-    <Compile Include="Models\UnemploymentRequests.cs" />
+    <Compile Include="Models\UnemploymentRequest.cs" />
     <Compile Include="Models\Employee.cs" />
     <Compile Include="Models\MyModel.cs" />
     <Compile Include="Models\Unemployed.cs" />
+    <Compile Include="Models\UnemploymentRequestList.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\bootstrap.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
     <Content Include="Content\img\PolitisCard.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -253,6 +235,8 @@
     <Content Include="Views\Unemployed\OAEDEpidomaAnergias.cshtml" />
     <Content Include="Views\Employee\PersonalInfoUpdate.cshtml" />
     <Content Include="Views\Unemployed\PersonalInfoUpdate.cshtml" />
+    <Content Include="Content\UploadedFiles\ticket-773315.pdf" />
+    <Content Include="Views\CivilServant\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,26 +260,11 @@
     <EmbeddedResource Include="Migrations\201705282237107_init.resx">
       <DependentUpon>201705282237107_init.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705301815105_change 0.resx">
-      <DependentUpon>201705301815105_change 0.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706070658406_change 7.resx">
+      <DependentUpon>201706070658406_change 7.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705301906259_change 1.resx">
-      <DependentUpon>201705301906259_change 1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201705310902352_change 2.resx">
-      <DependentUpon>201705310902352_change 2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706011055197_change 3.resx">
-      <DependentUpon>201706011055197_change 3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706012239544_change 4.resx">
-      <DependentUpon>201706012239544_change 4.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706020955184_change 5.resx">
-      <DependentUpon>201706020955184_change 5.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706021001033_change 6.resx">
-      <DependentUpon>201706021001033_change 6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201706070720516_change 8.resx">
+      <DependentUpon>201706070720516_change 8.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -7,13 +7,13 @@ namespace ePolitis.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class change6 : IMigrationMetadata
+    public sealed partial class change7 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(change6));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(change7));
         
         string IMigrationMetadata.Id
         {
-            get { return "201706021001033_change 6"; }
+            get { return "201706070658406_change 7"; }
         }
         
         string IMigrationMetadata.Source

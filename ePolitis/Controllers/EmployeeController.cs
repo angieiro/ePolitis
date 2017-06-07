@@ -1,6 +1,7 @@
 ﻿using ePolitis.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -112,11 +113,6 @@ namespace ePolitis.Controllers
             return RedirectToAction("Index"/*, currentUser*/);
         }
 
-        public ActionResult OAEDUploadpage()
-        {
-            return View();
-        }
-
         //IKA Services
         public ActionResult IKAEkdosiAMA()
         {
@@ -141,6 +137,37 @@ namespace ePolitis.Controllers
         {
             //_updateVisits("OAEDEpidomaAnergias");
             return View();
+        }
+
+        [HttpGet]
+        public ActionResult OAEDUploadpage()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult OAEDUploadpage(HttpPostedFileBase file)
+        {
+            try
+            {
+                if (file.ContentLength > 0)
+                {
+                    string filename = Path.GetFileName(file.FileName);
+                    string path = Path.Combine(Server.MapPath("~/UploadedFiles/"), filename);
+                    file.SaveAs(path);
+
+                }
+                ViewBag.Message = "File upload succesfull!!";
+                return View();
+            }
+            catch
+            {
+                ViewBag.Message = "File upload failed!!";
+                return View();
+            }
+
+
+
         }
     }
 }

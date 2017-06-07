@@ -1,0 +1,40 @@
+﻿@model ePolitis.Models.UnemploymentRequestList
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Προβολή Αιτήσεων</h1>
+
+<form>
+
+    <table style="width:100%">
+        <tr>
+            <th>Id</th>
+            <th>Επώνυμο</th>
+            <th>Όνομα</th>
+            <th>Δικαιολογητικό</th>
+            <th>Έγκριση</th>
+        </tr>
+        @foreach (var req in Model.)
+        {
+            <tr>
+                <td>@Model.RequestId</td>
+                <td>@Model.Employee.LastName</td>
+                <td>@Model.Employee.FirstName</td>
+                <td>@Model.Employee.FileApplicationPath</td>
+                <td>@Html.EditorFor(model => model.Approved, new { htmlAttributes = new { @class = "form-control" } })</td>
+
+            </tr>
+        }
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-default" />
+        </div>
+    </div>
+</form>
+
+
+

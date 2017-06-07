@@ -1,7 +1,7 @@
 ﻿body {
     margin: auto;
     font-family: 'Open Sans', sans-serif;
-    background-image: url('img/PolitisCard.jpg');
+    background-image: url('../img/PolitisCard.jpg');
 }
 
 .info p {
