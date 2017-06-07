@@ -12,12 +12,13 @@ namespace ePolitis.Controllers
     {
         private MyModel db = new MyModel();
 
-        public ActionResult TestIndex()
-        {
-            _updateVisits("TestIndex");
-            var users = db.Users.ToList();
-            return View(users);
-        }
+        //public ActionResult TestIndex()
+        //{
+        //    _updateVisits("TestIndex");
+        //    var users = db.Users.ToList();
+
+        //    return View(users);
+        //}
 
         //IKA Services
         public ActionResult IKAEkdosiAMA()

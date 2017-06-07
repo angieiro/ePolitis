@@ -16,19 +16,21 @@
             <th>Δικαιολογητικό</th>
             <th>Έγκριση</th>
         </tr>
-        @foreach (var req in Model.)
+        @foreach (var req in Model.RequestList)
         {
             <tr>
-                <td>@Model.RequestId</td>
-                <td>@Model.Employee.LastName</td>
-                <td>@Model.Employee.FirstName</td>
-                <td>@Model.Employee.FileApplicationPath</td>
-                <td>@Html.EditorFor(model => model.Approved, new { htmlAttributes = new { @class = "form-control" } })</td>
+                <td>@req.RequestId</td>
+                <td>@req.Employee.LastName</td>
+                <td>@req.Employee.FirstName</td>
+                <td>@req.Employee.FileApplicationPath</td>
+                <td>@Html.EditorFor(model => req.Approved, new { htmlAttributes = new { @class = "form-control" } })</td>
 
             </tr>
         }
     </table>
-
+    <br />
+    <br />
+    <br />
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Submit" class="btn btn-default" />

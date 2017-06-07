@@ -153,7 +153,7 @@ namespace ePolitis.Controllers
                 if (file.ContentLength > 0)
                 {
                     string filename = Path.GetFileName(file.FileName);
-                    string path = Path.Combine(Server.MapPath("~/UploadedFiles/"), filename);
+                    string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles/"), filename);
                     file.SaveAs(path);
 
                 }
