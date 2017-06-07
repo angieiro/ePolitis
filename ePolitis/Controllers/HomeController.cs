@@ -12,41 +12,6 @@ namespace ePolitis.Controllers
     {
         private MyModel db = new MyModel();
 
-        //public ActionResult TestIndex()
-        //{
-        //    _updateVisits("TestIndex");
-        //    var users = db.Users.ToList();
-
-        //    return View(users);
-        //}
-
-        //IKA Services
-        public ActionResult IKAEkdosiAMA()
-        {
-            _updateVisits("IKAEkdosiAMA");
-            return View();
-        }
-
-        public ActionResult IKAEkdosiVivliariouYgeias()
-        {
-            _updateVisits("IKAEkdosiVivliariouYgeias");
-            return View();
-        }
-
-        //OAED Services
-        public ActionResult OAEDEggrafiMitrwo()
-        {
-            _updateVisits("OAEDEggrafiMitrwo");
-            return View();
-        }
-
-        public ActionResult OAEDEpidomaAnergias()
-        {
-            _updateVisits("OAEDEpidomaAnergias");
-            return View();
-        }
-
-
 
         public ActionResult Register()
         {
@@ -105,6 +70,11 @@ namespace ePolitis.Controllers
                 FormsAuthentication.SetAuthCookie(currentUser.LastName + currentUser.FirstName, false);
                 Session.Add("Email", user.Email);
                 //return View("ListIndex");
+                if (currentUser.IsCivilServant)
+                {
+                    Session.Add("user", currentUser);
+                    return RedirectToAction("Index", "CivilServant");
+                }
                 if (currentUser.IsUnemployed)
                 {
                     Unemployed unemployeeUser = new Unemployed();
@@ -142,6 +112,8 @@ namespace ePolitis.Controllers
             return View();
         }
 
+        //δεν κάνει τίποτα χρήσιμο στην εφαρμογή μας, 
+        //αλλά το 'κανα για να τεσταρω τα sessions
         private void _updateVisits(string name)
         {
             History h = (History)Session["History"];

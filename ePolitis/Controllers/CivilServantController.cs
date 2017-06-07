@@ -12,7 +12,7 @@ namespace ePolitis.Controllers
         private MyModel db = new MyModel();
 
         // GET: CivilServant
-
+        [Authorize]
         public ActionResult Index()
         {
             UnemploymentRequestList EmployeesApplicants = new UnemploymentRequestList();
