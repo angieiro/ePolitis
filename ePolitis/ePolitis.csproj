@@ -236,11 +236,12 @@
     <Content Include="Views\Unemployed\OAEDEpidomaAnergias.cshtml" />
     <Content Include="Views\Employee\PersonalInfoUpdate.cshtml" />
     <Content Include="Views\Unemployed\PersonalInfoUpdate.cshtml" />
-    <Content Include="Content\UploadedFiles\ticket-773315.pdf" />
     <Content Include="Views\CivilServant\Index.cshtml" />
+    <Content Include="Views\Shared\_CivilServantHeader.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\UploadedFiles\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -148,16 +148,25 @@ namespace ePolitis.Controllers
         [HttpPost]
         public ActionResult OAEDUploadpage(HttpPostedFileBase file)
         {
+            //Employee currentUser = new Employee();
+            //currentUser = (Employee)Session["employeeUser"];
+
             try
             {
                 if (file.ContentLength > 0)
                 {
                     string filename = Path.GetFileName(file.FileName);
                     string path = Path.Combine(Server.MapPath("~/Content/UploadedFiles/"), filename);
-                    file.SaveAs(path);
 
+                    //currentUser.FileApplicationPath = path;
+
+                    file.SaveAs(path);
+                    
+                    db.SaveChanges();
                 }
                 ViewBag.Message = "File upload succesfull!!";
+
+                
                 return View();
             }
             catch
