@@ -51,9 +51,9 @@ namespace ePolitis.Migrations
 
             context.UnemploymentRequests.AddOrUpdate(
                x => x.RequestId,
-               new UnemploymentRequest { RequestId = 1, Afm = 123456789, Approved = false },
+               new UnemploymentRequest { RequestId = 1, Afm = 8975468, Approved = false },
                new UnemploymentRequest { RequestId = 2, Afm = 542584, Approved = false },
-               new UnemploymentRequest { RequestId = 3, Afm = 845646465, Approved = false }
+               new UnemploymentRequest { RequestId = 3, Afm = 073311444, Approved = false }
            );
 
             context.SaveChanges();
