@@ -156,27 +156,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201705282237107_init.cs" />
-    <Compile Include="Migrations\201705282237107_init.Designer.cs">
-      <DependentUpon>201705282237107_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706070658406_change 7.cs" />
-    <Compile Include="Migrations\201706070658406_change 7.Designer.cs">
-      <DependentUpon>201706070658406_change 7.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706070720516_change 8.cs" />
-    <Compile Include="Migrations\201706070720516_change 8.Designer.cs">
-      <DependentUpon>201706070720516_change 8.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706111738369_change 9.cs" />
-    <Compile Include="Migrations\201706111738369_change 9.Designer.cs">
-      <DependentUpon>201706111738369_change 9.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201706120642048_change 10.cs" />
-    <Compile Include="Migrations\201706120642048_change 10.Designer.cs">
-      <DependentUpon>201706120642048_change 10.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Citizen.cs" />
     <Compile Include="Models\History.cs" />
     <Compile Include="Models\UnemploymentRequest.cs" />
     <Compile Include="Models\Employee.cs" />
@@ -265,23 +246,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201705282237107_init.resx">
-      <DependentUpon>201705282237107_init.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706070658406_change 7.resx">
-      <DependentUpon>201706070658406_change 7.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706070720516_change 8.resx">
-      <DependentUpon>201706070720516_change 8.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706111738369_change 9.resx">
-      <DependentUpon>201706111738369_change 9.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201706120642048_change 10.resx">
-      <DependentUpon>201706120642048_change 10.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

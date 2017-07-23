@@ -15,7 +15,6 @@ namespace ePolitis.Controllers
 
         public ActionResult Register()
         {
-            _updateVisits("Register");
             return View();
         }
 
@@ -23,7 +22,7 @@ namespace ePolitis.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(User user)
         {
-            _updateVisits("Register");
+
             if (db.Users.Find(user.Email) == null)
             {
                 db.Users.Add(user);
@@ -49,7 +48,6 @@ namespace ePolitis.Controllers
 
         public ActionResult SignIn()
         {
-            _updateVisits("SignIn");
             return View();
         }
 
@@ -58,7 +56,6 @@ namespace ePolitis.Controllers
         public ActionResult SignInSubmit(User user)
         {
 
-            _updateVisits("SignIn");
             User currentUser = db.Users.Find(user.Email);
             if (currentUser == null)
             {
@@ -106,25 +103,10 @@ namespace ePolitis.Controllers
         //Logout Action TO BE checked
         public ActionResult SignOut()
         {
-            _updateVisits("SignOut");
             FormsAuthentication.SignOut();
             Session.Abandon();
             return View();
         }
 
-        //δεν κάνει τίποτα χρήσιμο στην εφαρμογή μας, 
-        //αλλά το 'κανα για να τεσταρω τα sessions
-        private void _updateVisits(string name)
-        {
-            History h = (History)Session["History"];
-            if (h == null)
-            {
-                h = new History();
-                Session["History"] = h;
-            }
-
-            h.Visits.Add(name);
-
-        }
     }
 }

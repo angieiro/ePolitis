@@ -20,8 +20,6 @@ namespace ePolitis.Models
         public string LastName { get; set; }
         public bool IsCivilServant { get; set; }
         public bool IsUnemployed { get; set; }
-
-
-
+        
     }
 }
