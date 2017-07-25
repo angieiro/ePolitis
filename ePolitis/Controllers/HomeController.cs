@@ -55,7 +55,6 @@ namespace ePolitis.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SignInSubmit(User user)
         {
-
             User currentUser = db.Users.Find(user.Email);
             if (currentUser == null)
             {
@@ -64,7 +63,7 @@ namespace ePolitis.Controllers
             }
             if (currentUser.Password == user.Password)
             {
-                FormsAuthentication.SetAuthCookie(currentUser.LastName + currentUser.FirstName, false);
+                FormsAuthentication.SetAuthCookie(currentUser.Email, false);
                 Session.Add("Email", user.Email);
                 //return View("ListIndex");
                 if (currentUser.IsCivilServant)
@@ -74,8 +73,8 @@ namespace ePolitis.Controllers
                 }
                 if (currentUser.IsUnemployed)
                 {
-                    Unemployed unemployeeUser = new Unemployed();
-                    unemployeeUser = db.Unemployeds.Single(x => x.Email == currentUser.Email);
+                    Citizen unemployeeUser = new Citizen();
+                    unemployeeUser = db.Citizens.Single(x => x.Email == currentUser.Email);
                     Session.Add("unemployeeUser", unemployeeUser);
 
                     return RedirectToAction("Index", "Unemployed");
@@ -83,12 +82,11 @@ namespace ePolitis.Controllers
                 }
                 else
                 {
-                    Employee employeeUser = new Employee();
-                    employeeUser = db.Employees.Single(x => x.Email == currentUser.Email);
+                    Citizen employeeUser = new Citizen();
+                    employeeUser = db.Citizens.Single(x => x.Email == currentUser.Email);
                     Session.Add("employeeUser", employeeUser);
 
                     return RedirectToAction("Index", "Employee");
-
                 }
 
             }

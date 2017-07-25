@@ -15,8 +15,10 @@ namespace ePolitis.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            UnemploymentRequestList EmployeesApplicants = new UnemploymentRequestList();
-            EmployeesApplicants.RequestList = db.UnemploymentRequests.Include("Employee").ToList();
+            UnemploymentRequestList EmployeesApplicants = new UnemploymentRequestList()
+            {
+                RequestList = db.UnemploymentRequests.Include("Citizen")./*Include("User").*/ToList()
+            };
             /*
             foreach (var req in rList)
             {

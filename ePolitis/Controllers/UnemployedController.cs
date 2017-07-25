@@ -21,48 +21,45 @@ namespace ePolitis.Controllers
 
         public ActionResult PersonalInfoCreate(User user)
         {
-            Unemployed currentUser = new Unemployed();
-            currentUser.Email = user.Email;
-            currentUser.FirstName = user.FirstName;
-            currentUser.LastName = user.LastName;
-
+            Citizen currentUser = new Citizen()
+            {
+                Email = user.Email
+            };
             return View(currentUser);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PersonalInfoCreate(Unemployed unemployed)
+        public ActionResult PersonalInfoCreate(Citizen unemployed)
         {
 
-            Unemployed currentUser = new Models.Unemployed();
+            Citizen currentUser = new Models.Citizen()
+            {
+                Email = unemployed.Email,
+                FathersName = unemployed.FathersName,
+                MothersName = unemployed.MothersName,
+                Gender = unemployed.Gender,
+                DateOfBirth = unemployed.DateOfBirth,
+                Afm = unemployed.Afm,
+                Ama = unemployed.Ama,
+                Amka = unemployed.Amka,
+                BirthLocation = unemployed.BirthLocation,
+                Country = unemployed.Country,
+                Nationality = unemployed.Nationality,
+                IdNumber = unemployed.IdNumber,
+                PassportNumber = unemployed.PassportNumber,
+                Phone = unemployed.Phone,
+                MobilePhone = unemployed.MobilePhone,
+                AddressStreet = unemployed.AddressStreet,
+                AddressNumber = unemployed.AddressNumber,
+                City = unemployed.City,
+                AreaCode = unemployed.AreaCode,
+                County = unemployed.County,
+                AmOaed = unemployed.AmOaed,
+                CardOaed = unemployed.CardOaed
+            };
 
-            currentUser.FirstName = unemployed.FirstName;
-            currentUser.LastName = unemployed.LastName;
-            currentUser.Email = unemployed.Email;
-            currentUser.FathersName = unemployed.FathersName;
-            currentUser.MothersName = unemployed.MothersName;
-            currentUser.Gender = unemployed.Gender;
-            currentUser.DateOfBirth = unemployed.DateOfBirth;
-            currentUser.Afm = unemployed.Afm;
-            currentUser.Ama = unemployed.Ama;
-            currentUser.Amka = unemployed.Amka;
-            currentUser.BirthLocation = unemployed.BirthLocation;
-            currentUser.Country = unemployed.Country;
-            currentUser.Nationality = unemployed.Nationality;
-            currentUser.IdNumber = unemployed.IdNumber;
-            currentUser.PassportNumber = unemployed.PassportNumber;
-            currentUser.Phone = unemployed.Phone;
-            currentUser.MobilePhone = unemployed.MobilePhone;
-            currentUser.AddressStreet = unemployed.AddressStreet;
-            currentUser.AddressNumber = unemployed.AddressNumber;
-            currentUser.Area = unemployed.Area;
-            currentUser.City = unemployed.City;
-            currentUser.AreaCode = unemployed.AreaCode;
-            currentUser.County = unemployed.County;
-            currentUser.AmOaed = unemployed.AmOaed;
-            currentUser.CardOaed = unemployed.CardOaed;
-
-            db.Unemployeds.Add(currentUser);
+            db.Citizens.Add(currentUser);
             db.SaveChanges();
             //return View("ListIndex");
             return RedirectToAction("Index", currentUser);
@@ -76,11 +73,12 @@ namespace ePolitis.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PersonalInfoUpdate(Unemployed unemployed)
+        public ActionResult PersonalInfoUpdate(Citizen unemployed)
         {
 
-            Unemployed currentUser = db.Unemployeds.SingleOrDefault(e => e.Email == unemployed.Email);
-
+            Citizen currentUser = db.Citizens.SingleOrDefault(e => e.Email == unemployed.Email);
+            //ViewBag.FirstName = Session["FirstName"];
+            //ViewBag.LastName = Session["LastName"];
             currentUser.FirstName = unemployed.FirstName;
             currentUser.LastName = unemployed.LastName;
             currentUser.Email = unemployed.Email;
@@ -100,7 +98,6 @@ namespace ePolitis.Controllers
             currentUser.MobilePhone = unemployed.MobilePhone;
             currentUser.AddressStreet = unemployed.AddressStreet;
             currentUser.AddressNumber = unemployed.AddressNumber;
-            currentUser.Area = unemployed.Area;
             currentUser.City = unemployed.City;
             currentUser.AreaCode = unemployed.AreaCode;
             currentUser.County = unemployed.County;

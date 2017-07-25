@@ -21,10 +21,10 @@ namespace ePolitis.Controllers
 
         public ActionResult PersonalInfoCreate(User user)
         {
-            Employee currentUser = new Employee();
-            currentUser.Email = user.Email;
-            currentUser.FirstName = user.FirstName;
-            currentUser.LastName = user.LastName;
+            Citizen currentUser = new Citizen()
+            {
+                Email = user.Email
+            };
 
             return View(currentUser);
         }
@@ -32,38 +32,34 @@ namespace ePolitis.Controllers
         
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PersonalInfoCreate(Employee employee)
+        public ActionResult PersonalInfoCreate(Citizen employee)
         {
-            Employee currentUser = new Employee();
+            Citizen currentUser = new Citizen()
+            {
+                Afm = employee.Afm,
+                Email = employee.Email,
+                FathersName = employee.FathersName,
+                MothersName = employee.MothersName,
+                Gender = employee.Gender,
+                DateOfBirth = employee.DateOfBirth,
 
-            currentUser.Afm = employee.Afm;
-
-            currentUser.FirstName = employee.FirstName;
-            currentUser.LastName = employee.LastName;
-            currentUser.Email = employee.Email;
-            currentUser.FathersName = employee.FathersName;
-            currentUser.MothersName = employee.MothersName;
-            currentUser.Gender = employee.Gender;
-            currentUser.DateOfBirth = employee.DateOfBirth;
-
-            currentUser.Ama = employee.Ama;
-            currentUser.Amka = employee.Amka;
-            currentUser.BirthLocation = employee.BirthLocation;
-            currentUser.Country = employee.Country;
-            currentUser.Nationality = employee.Nationality;
-            currentUser.IdNumber = employee.IdNumber;
-            currentUser.PassportNumber = employee.PassportNumber;
-            currentUser.Phone = employee.Phone;
-            currentUser.MobilePhone = employee.MobilePhone;
-            currentUser.AddressStreet = employee.AddressStreet;
-            currentUser.AddressNumber = employee.AddressNumber;
-            currentUser.Area = employee.Area;
-            currentUser.City = employee.City;
-            currentUser.AreaCode = employee.AreaCode;
-            currentUser.County = employee.County;
-            currentUser.WorkPhone = employee.WorkPhone;
-
-            db.Employees.Add(currentUser);
+                Ama = employee.Ama,
+                Amka = employee.Amka,
+                BirthLocation = employee.BirthLocation,
+                Country = employee.Country,
+                Nationality = employee.Nationality,
+                IdNumber = employee.IdNumber,
+                PassportNumber = employee.PassportNumber,
+                Phone = employee.Phone,
+                MobilePhone = employee.MobilePhone,
+                AddressStreet = employee.AddressStreet,
+                AddressNumber = employee.AddressNumber,
+                City = employee.City,
+                AreaCode = employee.AreaCode,
+                County = employee.County,
+                WorkPhone = employee.WorkPhone
+            };
+            db.Citizens.Add(currentUser);
             db.SaveChanges();
             return RedirectToAction("Index", currentUser);
         }
@@ -76,16 +72,16 @@ namespace ePolitis.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult PersonalInfoUpdate(Employee employee)
+        public ActionResult PersonalInfoUpdate(Citizen employee)
         {
 
-            Employee currentUser = db.Employees.SingleOrDefault(e => e.Email == employee.Email);
+            Citizen currentUser = db.Citizens.SingleOrDefault(e => e.Email == employee.Email);
 
             currentUser.Afm = employee.Afm;
 
             currentUser.FirstName = employee.FirstName;
             currentUser.LastName = employee.LastName;
-            currentUser.Email = employee.Email;
+            //currentUser.Email = employee.Email;
             currentUser.FathersName = employee.FathersName;
             currentUser.MothersName = employee.MothersName;
             currentUser.Gender = employee.Gender;
@@ -102,7 +98,6 @@ namespace ePolitis.Controllers
             currentUser.MobilePhone = employee.MobilePhone;
             currentUser.AddressStreet = employee.AddressStreet;
             currentUser.AddressNumber = employee.AddressNumber;
-            currentUser.Area = employee.Area;
             currentUser.City = employee.City;
             currentUser.AreaCode = employee.AreaCode;
             currentUser.County = employee.County;
@@ -116,26 +111,22 @@ namespace ePolitis.Controllers
         //IKA Services
         public ActionResult IKAEkdosiAMA()
         {
-            //_updateVisits("IKAEkdosiAMA");
             return View();
         }
 
         public ActionResult IKAEkdosiVivliariouYgeias()
         {
-            //_updateVisits("IKAEkdosiVivliariouYgeias");
             return View();
         }
 
         //OAED Services
         public ActionResult OAEDEggrafiMitrwo()
-        {
-            //_updateVisits("OAEDEggrafiMitrwo");
+        {        
             return View();
         }
 
         public ActionResult OAEDEpidomaAnergias()
         {
-            //_updateVisits("OAEDEpidomaAnergias");
             return View();
         }
 
@@ -161,7 +152,7 @@ namespace ePolitis.Controllers
                     //currentUser.FileApplicationPath = path;
 
                     file.SaveAs(path);
-                    
+                    System.Diagnostics.Debug.WriteLine($"path: {path}");
                     db.SaveChanges();
                 }
                 ViewBag.Message = "File upload succesfull!!";

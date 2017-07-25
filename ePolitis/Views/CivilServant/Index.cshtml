@@ -21,9 +21,9 @@
         {
             <tr>
                 <td>@req.RequestId</td>
-                <td>@req.Employee.LastName</td>
-                <td>@req.Employee.FirstName</td>
-                <td>@req.Employee.FileApplicationPath</td>
+                <td>@req.Citizen.LastName</td>
+                <td>@req.Citizen.FirstName</td>
+                <td>@req.FileApplicationPath</td>
                 <td>@Html.EditorFor(model => req.Approved, new { htmlAttributes = new { @class = "form-control" } })</td>
 
             </tr>

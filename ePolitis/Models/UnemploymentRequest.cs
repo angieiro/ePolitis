@@ -10,12 +10,14 @@ namespace ePolitis.Models
     public class UnemploymentRequest
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int RequestId { get; set; }
         public bool Approved { get; set; }
+        public string FileApplicationPath { get; set; }
 
-        [ForeignKey("Employee")]
-        public int Afm { get; set; }
-        public Employee Employee { get; set; }
-        //public virtual ICollection<Employee> Applicants { get; set; }
+        [ForeignKey("Citizen")]
+        public string Afm { get; set; }
+        public virtual Citizen Citizen { get; set; }
+
     }
 }

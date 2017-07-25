@@ -21,11 +21,11 @@ namespace ePolitis.Models
         // Add a DbSet for each entity type that you want to include in your model. For more information 
         // on configuring and using a Code First model, see http://go.microsoft.com/fwlink/?LinkId=390109.
 
-        public virtual DbSet<Employee> Employees{ get; set; }
-        public virtual DbSet<Unemployed> Unemployeds { get; set; }
+        //public virtual DbSet<Employee> Employees{ get; set; }
+        //public virtual DbSet<Unemployed> Unemployeds { get; set; }
 
         public virtual DbSet<User> Users { get; set; }
-
+        public virtual DbSet<Citizen> Citizens { get; set; }
         public virtual DbSet<UnemploymentRequest> UnemploymentRequests { get; set; }
     }
 
