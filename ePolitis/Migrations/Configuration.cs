@@ -49,12 +49,11 @@ namespace ePolitis.Migrations
                new User { Email = "ioannic@gmail.com", Password = "54321", IsCivilServant = true, IsUnemployed = false }
            );
 
-           // context.UnemploymentRequests.AddOrUpdate(
-           //    x => x.RequestId,
-           //    new UnemploymentRequest { RequestId = 1, Afm = "8975468", Approved = false },
-           //    new UnemploymentRequest { RequestId = 2, Afm = "542584", Approved = false },
-           //    new UnemploymentRequest { RequestId = 3, Afm = "073311444", Approved = false }
-           //);
+            context.UnemploymentRequests.AddOrUpdate(
+               x => x.RequestId,
+              new UnemploymentRequest { RequestId = 1, Afm = "111333222", Approved = false },
+              new UnemploymentRequest { RequestId = 2, Afm = "789444666", Approved = false }
+          );
 
             context.SaveChanges();
         }

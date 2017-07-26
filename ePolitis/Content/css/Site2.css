@@ -198,58 +198,6 @@ i {
     #sendmessage.show, .show {
         display: block;
     }
-/* Dropdown Button */
-/*.dropbtn {
-    background-color: #008B8B;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px 5px 5px 5px;
-    min-width: 300px;
-    min-height: 80px;
-}*/
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #5F9EA0;
-    min-width: 300px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 1;
-    border-radius: 5px 5px 5px 5px;
-}
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-        /* Change color of dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #D3D3D3
-        }
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #3e8e41;
-}
 
 .form-group {
     margin-left: 20px;

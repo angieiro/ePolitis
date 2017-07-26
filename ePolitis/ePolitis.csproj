@@ -162,6 +162,10 @@
     <Compile Include="Migrations\201707250025149_first migration.Designer.cs">
       <DependentUpon>201707250025149_first migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707261918586_second.cs" />
+    <Compile Include="Migrations\201707261918586_second.Designer.cs">
+      <DependentUpon>201707261918586_second.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Citizen.cs" />
     <Compile Include="Models\UnemploymentRequest.cs" />
@@ -218,22 +222,34 @@
     <Content Include="bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll" />
     <Content Include="bin\roslyn\Microsoft.Win32.Primitives.dll" />
     <Content Include="bin\roslyn\System.AppContext.dll" />
-    <Content Include="bin\roslyn\System.Collections.Immutable.dll" />
+    <Content Include="bin\roslyn\System.Collections.Immutable.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\roslyn\System.Console.dll" />
     <Content Include="bin\roslyn\System.Diagnostics.FileVersionInfo.dll" />
     <Content Include="bin\roslyn\System.Diagnostics.Process.dll" />
     <Content Include="bin\roslyn\System.Diagnostics.StackTrace.dll" />
     <Content Include="bin\roslyn\System.IO.Compression.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\roslyn\System.IO.FileSystem.DriveInfo.dll" />
-    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll" />
+    <Content Include="bin\roslyn\System.IO.FileSystem.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\roslyn\System.IO.Pipes.dll" />
-    <Content Include="bin\roslyn\System.Reflection.Metadata.dll" />
+    <Content Include="bin\roslyn\System.Reflection.Metadata.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\roslyn\System.Security.AccessControl.dll" />
     <Content Include="bin\roslyn\System.Security.Claims.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Algorithms.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\roslyn\System.Security.Cryptography.Encoding.dll" />
-    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll" />
+    <Content Include="bin\roslyn\System.Security.Cryptography.Primitives.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="bin\roslyn\System.Security.Cryptography.X509Certificates.dll" />
     <Content Include="bin\roslyn\System.Security.Principal.Windows.dll" />
     <Content Include="bin\roslyn\System.Text.Encoding.CodePages.dll" />
@@ -268,6 +284,7 @@
     <Content Include="bin\WebGrease.dll" />
     <Content Include="Content\css\bootstrap.css" />
     <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\Site2.css" />
     <Content Include="Content\img\PolitisCard.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -356,6 +373,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201707250025149_first migration.resx">
       <DependentUpon>201707250025149_first migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707261918586_second.resx">
+      <DependentUpon>201707261918586_second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

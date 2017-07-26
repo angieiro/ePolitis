@@ -292,7 +292,7 @@ table {
     }
 
     .navbar {
-        display: none;
+        display: /*none*/inline-block;
     }
 
     .table td,
@@ -7101,4 +7101,39 @@ td.visible-print {
     td.hidden-print {
         display: none !important;
     }
+}
+
+/*navbar css*/
+
+.head-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+.li-head-navbar li {
+    float: left;
+    border-right: 1px solid #bbb;
+}
+
+    .li-head-navbar li:last-child {
+        border-right: none;
+    }
+
+    .li-head-navbar li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+        .li-head-navbar li a:hover:not(.active) {
+            background-color: #111;
+        }
+
+.li-head-navbar .active {
+    background-color: #4CAF50;
 }
