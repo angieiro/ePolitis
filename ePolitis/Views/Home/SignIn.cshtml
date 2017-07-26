@@ -6,7 +6,7 @@
 @using (Html.BeginForm("SignInSubmit", "Home", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-<h1>SignIn</h1>
+<h1 style="text-align:center">Σύνδεση</h1>
 
 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 <div class="form-group">
@@ -28,9 +28,9 @@
     </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group">
     <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="SignIn" class="btn btn-primary" />
+        <input type="submit" value="Σύνδεση" class="btn btn-primary" />
         <input type="reset" value="Clear" class="btn btn-default"/>
     </div>
 
