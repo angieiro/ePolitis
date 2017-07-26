@@ -1,4 +1,4 @@
-﻿@model ePolitis.Models.Unemployed
+﻿@model ePolitis.Models.Citizen
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -17,6 +17,7 @@
         <div class="contentform">
             <div class="form-group">
                 <p>Αριθμός μητρώου ΟΑΕΔ: @Model.AmOaed</p>
+                <p>Αριθμός κάρτας ΟΑΕΔ: @Model.CardOaed</p>
                 <p>Όνομα: @Model.FirstName</p>
                 <p>Επώνυμο: @Model.LastName</p>
             </div>

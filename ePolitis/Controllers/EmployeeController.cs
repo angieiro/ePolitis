@@ -38,6 +38,8 @@ namespace ePolitis.Controllers
             {
                 Afm = employee.Afm,
                 Email = employee.Email,
+                FirstName = employee.FirstName,
+                LastName = employee.LastName,
                 FathersName = employee.FathersName,
                 MothersName = employee.MothersName,
                 Gender = employee.Gender,

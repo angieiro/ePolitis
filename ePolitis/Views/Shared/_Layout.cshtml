@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - e-Politis Application</title>
     @*@Styles.Render("~/Content/Site.css")*@
-    @Styles.Render("~/Content/css/Site.css")
     @*@Styles.Render("~/Content/css/")*@
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css/bootstrap.css")
+    @Styles.Render("~/Content/css/Site.css")
+
+
 </head>
 <body>
+    @RenderBody()
     <div>
-        @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My e-Politis Application</p>

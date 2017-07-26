@@ -36,6 +36,8 @@ namespace ePolitis.Controllers
             Citizen currentUser = new Models.Citizen()
             {
                 Email = unemployed.Email,
+                FirstName = unemployed.FirstName,
+                LastName = unemployed.LastName,
                 FathersName = unemployed.FathersName,
                 MothersName = unemployed.MothersName,
                 Gender = unemployed.Gender,
@@ -77,8 +79,8 @@ namespace ePolitis.Controllers
         {
 
             Citizen currentUser = db.Citizens.SingleOrDefault(e => e.Email == unemployed.Email);
-            //ViewBag.FirstName = Session["FirstName"];
-            //ViewBag.LastName = Session["LastName"];
+            currentUser.FirstName = unemployed.FirstName;
+            currentUser.LastName = unemployed.LastName;
             currentUser.FirstName = unemployed.FirstName;
             currentUser.LastName = unemployed.LastName;
             currentUser.Email = unemployed.Email;
