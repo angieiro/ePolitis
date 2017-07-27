@@ -1,4 +1,4 @@
-﻿@model ePolitis.Models.Employee
+﻿@model ePolitis.Models.Citizen
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";    
@@ -24,7 +24,7 @@
 
     <div class="contentform">
         <div class="form-group">
-            <p>Ημερομηνία γέννησης: @Model.DateOfBirth</p>
+            <p>Ημερομηνία γέννησης: @Html.DisplayFor(modelItem => Model.DateOfBirth)</p>
             <p>Εθνικότητα: @Model.Nationality</p>
             <p>Αριθμός Ταυτότητας: @Model.IdNumber</p>
             <p>Αριθμός Διαβατηρίου: @Model.PassportNumber</p>

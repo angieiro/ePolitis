@@ -4,28 +4,18 @@
     background-image: url('../img/PolitisCard.jpg');
 }
 
-.info p {
+h1 {
     text-align: center;
-    color: #999;
-    text-transform: none;
-    font-weight: 600;
-    font-size: 15px;
-    margin-top: 2px
+    color: white;
+    text-shadow: 1px 1px 0 #20B2AA;
+    margin: 50px 0 0 0
 }
 
-.info i {
-    color: #F6AA93;
-}
-
-form h1 {
-    font-size: 18px;
-    background: #008B8B none repeat scroll 0% 0%;
-    color: rgb(255, 255, 255);
-    padding: 22px 25px;
-    border-radius: 5px 5px 5px 5px;
-    margin: auto;
-    text-shadow: none;
-    text-align: left
+h2 {
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 0 #20B2AA;
+    margin: 50px 0 0 0
 }
 
 form {
@@ -37,23 +27,42 @@ form {
     overflow: hidden;
 }
 
-p span {
-    color: #F00;
-}
+    form h2 {
+        font-size: 18px;
+        background: #008B8B none repeat scroll 0% 0%;
+        color: rgb(255, 255, 255);
+        padding: 22px 25px;
+        border-radius: 5px 5px 5px 5px;
+        margin: auto;
+        text-shadow: none;
+        text-align: left
+    }
+
+    form h1 {
+        font-size: 18px;
+        background: #008B8B none repeat scroll 0% 0%;
+        color: rgb(255, 255, 255);
+        padding: 22px 25px;
+        border-radius: 5px 5px 5px 5px;
+        margin: auto;
+        text-shadow: none;
+        text-align: left
+    }
+
+
 
 p {
-    margin: 0px;
+    margin: 0;
     font-weight: 500;
     line-height: 2;
     color: #333;
 }
 
-h1 {
-    text-align: center;
-    color: white;
-    text-shadow: 1px 1px 0px #20B2AA;
-    margin: 50px 0px 0px 0px
-}
+    p span {
+        color: #F00;
+    }
+
+
 
 input {
     border-radius: 5px 5px 5px 5px;
@@ -62,7 +71,7 @@ input {
     width: 75%;
     height: 40px;
     float: left;
-    padding: 0px 15px;
+    padding: 0 15px;
 }
 
 a {
@@ -76,12 +85,14 @@ textarea {
     width: 75%;
     height: 130px;
     float: left;
-    padding: 0px 15px;
+    padding: 0 15px;
 }
 
 .form-group {
     overflow: hidden;
     clear: both;
+    margin-top: 35px;
+    padding-top: 25px;
 }
 
 .form-control {
@@ -91,7 +102,7 @@ textarea {
     width: 75%;
     height: 40px;
     float: left;
-    padding: 0px 15px;
+    padding: 0 15px;
 }
 
 .icon-case {
@@ -151,14 +162,14 @@ i {
     float: left;
     border-right: 1px dotted #CCC;
     box-sizing: border-box;
-    padding: 0px 15px 0px 0px;
+    padding: 0 15px 0 0;
 }
 
 .rightcontact {
     width: 49.5%;
     float: right;
     box-sizing: border-box;
-    padding: 0px 0px 0px 15px;
+    padding: 0 0 0 15px;
 }
 
 .validation {
@@ -181,14 +192,14 @@ i {
     border: 1px solid #B3DC82;
     padding: 13px 40px 13px 18px;
     border-radius: 3px;
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.03);
 }
 
     #sendmessage.show, .show {
         display: block;
     }
 /* Dropdown Button */
-.dropbtn {
+/*.dropbtn {
     background-color: #008B8B;
     color: white;
     padding: 16px;
@@ -198,7 +209,7 @@ i {
     border-radius: 5px 5px 5px 5px;
     min-width: 300px;
     min-height: 80px;
-}
+}*/
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
@@ -212,7 +223,7 @@ i {
     position: absolute;
     background-color: #5F9EA0;
     min-width: 300px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
     border-radius: 5px 5px 5px 5px;
 }
@@ -240,6 +251,22 @@ i {
     background-color: #3e8e41;
 }
 
-.form-group{
+.form-group {
     margin-left: 20px;
 }
+
+.info p {
+    text-align: center;
+    color: #999;
+    text-transform: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 2px
+}
+
+.info i {
+    color: #F6AA93;
+}
+
+
+

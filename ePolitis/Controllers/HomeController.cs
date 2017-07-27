@@ -15,29 +15,30 @@ namespace ePolitis.Controllers
 
         public ActionResult Register()
         {
-            _updateVisits("Register");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(User user)
+        public ActionResult RegisterSubmit(User user)
         {
-            _updateVisits("Register");
             if (db.Users.Find(user.Email) == null)
             {
                 db.Users.Add(user);
+                Session.Add("Email", user.Email);
+                Session.Add("user", user);
                 db.SaveChanges();
                 if (user.IsUnemployed)
                 {
-                    return RedirectToAction("PersonalInfoCreate", "Unemployed", user);
+                    return RedirectToAction("PersonalInfoCreate", "Unemployed");
                 }
                 else
                 {
-                    return RedirectToAction("PersonalInfoCreate", "Employee", user);
+                    //Session.Add("employeeUser", employeeUser);
+                    return RedirectToAction("PersonalInfoCreate", "Employee");
 
                 }
-
+                
             }
             else
             {
@@ -49,7 +50,6 @@ namespace ePolitis.Controllers
 
         public ActionResult SignIn()
         {
-            _updateVisits("SignIn");
             return View();
         }
 
@@ -57,8 +57,6 @@ namespace ePolitis.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult SignInSubmit(User user)
         {
-
-            _updateVisits("SignIn");
             User currentUser = db.Users.Find(user.Email);
             if (currentUser == null)
             {
@@ -67,7 +65,7 @@ namespace ePolitis.Controllers
             }
             if (currentUser.Password == user.Password)
             {
-                FormsAuthentication.SetAuthCookie(currentUser.LastName + currentUser.FirstName, false);
+                FormsAuthentication.SetAuthCookie(currentUser.Email, false);
                 Session.Add("Email", user.Email);
                 //return View("ListIndex");
                 if (currentUser.IsCivilServant)
@@ -77,8 +75,8 @@ namespace ePolitis.Controllers
                 }
                 if (currentUser.IsUnemployed)
                 {
-                    Unemployed unemployeeUser = new Unemployed();
-                    unemployeeUser = db.Unemployeds.Single(x => x.Email == currentUser.Email);
+                    Citizen unemployeeUser = new Citizen();
+                    unemployeeUser = db.Citizens.Single(x => x.Email == currentUser.Email);
                     Session.Add("unemployeeUser", unemployeeUser);
 
                     return RedirectToAction("Index", "Unemployed");
@@ -86,12 +84,11 @@ namespace ePolitis.Controllers
                 }
                 else
                 {
-                    Employee employeeUser = new Employee();
-                    employeeUser = db.Employees.Single(x => x.Email == currentUser.Email);
+                    Citizen employeeUser = new Citizen();
+                    employeeUser = db.Citizens.Single(x => x.Email == currentUser.Email);
                     Session.Add("employeeUser", employeeUser);
 
                     return RedirectToAction("Index", "Employee");
-
                 }
 
             }
@@ -106,25 +103,17 @@ namespace ePolitis.Controllers
         //Logout Action TO BE checked
         public ActionResult SignOut()
         {
-            _updateVisits("SignOut");
             FormsAuthentication.SignOut();
             Session.Abandon();
             return View();
         }
 
-        //δεν κάνει τίποτα χρήσιμο στην εφαρμογή μας, 
-        //αλλά το 'κανα για να τεσταρω τα sessions
-        private void _updateVisits(string name)
+        public ActionResult SuccessfulRegister()
         {
-            History h = (History)Session["History"];
-            if (h == null)
-            {
-                h = new History();
-                Session["History"] = h;
-            }
-
-            h.Visits.Add(name);
-
+            FormsAuthentication.SignOut();
+            Session.Abandon();
+            return View();
         }
+
     }
 }

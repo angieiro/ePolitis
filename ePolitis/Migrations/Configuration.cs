@@ -28,33 +28,32 @@ namespace ePolitis.Migrations
             //    );
             //
 
-           // context.Unemployeds.AddOrUpdate(
-           //    x => x.Afm  ,
-           //    new Unemployed { Afm=123456789, },
-           //    new Unemployed { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
-           //    new Unemployed { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
-           //);
+            // context.Unemployeds.AddOrUpdate(
+            //    x => x.Afm  ,
+            //    new Unemployed { Afm=123456789, },
+            //    new Unemployed { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
+            //    new Unemployed { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
+            //);
 
-           // context.Employees.AddOrUpdate(
-           //    x => x.Email,
-           //    new Employee { Email = "kaiti@gmail.com", Password = "12345", FirstName = "Kaitoula", LastName = "Kenourgiou", IsCivilServant = true },
-           //    new Employee { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
-           //    new Employee { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
-           //);
+            // context.Employees.AddOrUpdate(
+            //    x => x.Email,
+            //    new Employee { Email = "kaiti@gmail.com", Password = "12345", FirstName = "Kaitoula", LastName = "Kenourgiou", IsCivilServant = true },
+            //    new Employee { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
+            //    new Employee { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
+            //);
 
             context.Users.AddOrUpdate(
                x => x.Email,
-               new User { Email = "kaiti@gmail.com", Password = "12345", FirstName="Kaitoula", LastName="Kenourgiou", IsCivilServant=true },
-               new User { Email = "maritsa@gmail.com", Password = "123456", FirstName = "Marika", LastName = "Bekatorou", IsCivilServant = true },
-               new User { Email = "ioannic@gmail.com", Password = "54321", FirstName = "Ioannis", LastName = "Chiliggiris", IsCivilServant = true }
+               new User { Email = "kaiti@gmail.com", Password = "12345", IsCivilServant = true, IsUnemployed = false },
+               new User { Email = "maritsa@gmail.com", Password = "123456", IsCivilServant = true, IsUnemployed = false },
+               new User { Email = "ioannic@gmail.com", Password = "54321", IsCivilServant = true, IsUnemployed = false }
            );
 
             context.UnemploymentRequests.AddOrUpdate(
                x => x.RequestId,
-               new UnemploymentRequest { RequestId = 1, Afm = 8975468, Approved = false },
-               new UnemploymentRequest { RequestId = 2, Afm = 542584, Approved = false },
-               new UnemploymentRequest { RequestId = 3, Afm = 073311444, Approved = false }
-           );
+              new UnemploymentRequest { RequestId = 1, Afm = "111333222", Approved = false },
+              new UnemploymentRequest { RequestId = 2, Afm = "789444666", Approved = false }
+          );
 
             context.SaveChanges();
         }
