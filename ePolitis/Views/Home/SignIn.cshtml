@@ -6,38 +6,53 @@
 @using (Html.BeginForm("SignInSubmit", "Home", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-<h1 style="text-align:center">Σύνδεση</h1>
+    <h1 style="text-align:center">Σύνδεση</h1>
 
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<div class="form-group">
-    @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
-    <div class="col-md-10">
-        @*@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })*@
-        @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
-        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-    </div>
-</div>
-
-@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-<div class="form-group">
-    @Html.LabelFor(model => model.Password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
-    <div class="col-md-10">
-        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })
-        @*@Html.TextBoxFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })*@
-        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-    </div>
-</div>
-
-<div class="form-group">
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Σύνδεση" class="btn btn-primary" />
-        <input type="reset" value="Clear" class="btn btn-default"/>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*@Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })*@
+            @Html.TextBoxFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
     </div>
 
-    @if (ViewBag.NotMatching == true)
-    {
-        <p>Incorrect Password. Please try again.</p>
-    }
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.Password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })
+            @*@Html.TextBoxFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type = "password" } })*@
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+    </div>
 
-</div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Σύνδεση" class="btn btn-primary" />
+            <input type="button" value="Clear" class="btn btn-default" />
+        </div>
+
+        @if (ViewBag.NotMatching == true)
+        {
+            <p>Incorrect Password. Please try again.</p>
+        }
+
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <a href="@Url.Action("Register","Home")" class="btn btn-danger" style="display:inline-block;width: 75%;">Νέος Χρήστης</a>
+        </div>
+    </div>
 }
+
+@*@using (Html.BeginForm("Register", "Home"))
+    {
+        <h1 style="text-align:center">Σύνδεση</h1>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Νέος Χρήστης" class="btn btn-danger" />
+            </div>
+        </div>
+    }*@

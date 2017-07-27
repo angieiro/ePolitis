@@ -106,5 +106,10 @@ namespace ePolitis.Controllers
             return View();
         }
 
+        public ActionResult SuccessfulRegister()
+        {
+            return View();
+        }
+
     }
 }

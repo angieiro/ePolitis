@@ -63,7 +63,7 @@ namespace ePolitis.Controllers
             };
             db.Citizens.Add(currentUser);
             db.SaveChanges();
-            return RedirectToAction("Index", currentUser);
+            return RedirectToAction("SuccessfulRegister", "Home");
         }
 
         //Update PersonalInfoCreate so as to update changes to existed employees as well

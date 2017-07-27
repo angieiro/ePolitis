@@ -64,7 +64,7 @@ namespace ePolitis.Controllers
             db.Citizens.Add(currentUser);
             db.SaveChanges();
             //return View("ListIndex");
-            return RedirectToAction("Index", currentUser);
+            return RedirectToAction("SuccessfulRegister", "Home");
         }
 
         //Update PersonalInfoCreate so as to update changes to existed unemployed users as well
