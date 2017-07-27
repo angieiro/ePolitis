@@ -19,7 +19,9 @@ namespace ePolitis.Models
         public string FathersName { get; set; }
         public string MothersName { get; set; }
         public string Gender { get; set; }
-        public string DateOfBirth { get; set; }
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        public DateTime DateOfBirth { get; set; }
         public string BirthLocation { get; set; }
         public string Country { get; set; }
         public string Nationality { get; set; }
