@@ -170,6 +170,10 @@
     <Compile Include="Migrations\201707271125006_third.Designer.cs">
       <DependentUpon>201707271125006_third.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707271548305_forth.cs" />
+    <Compile Include="Migrations\201707271548305_forth.Designer.cs">
+      <DependentUpon>201707271548305_forth.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Citizen.cs" />
     <Compile Include="Models\UnemploymentRequest.cs" />
@@ -428,6 +432,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707271125006_third.resx">
       <DependentUpon>201707271125006_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707271548305_forth.resx">
+      <DependentUpon>201707271548305_forth.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

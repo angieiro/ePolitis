@@ -35,33 +35,32 @@ namespace ePolitis.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult PersonalInfoCreate(Citizen employee)
         {
-            Citizen currentUser = new Citizen()
-            {
-                Afm = employee.Afm,
-                //Email = employee.Email,
-                FirstName = employee.FirstName,
-                LastName = employee.LastName,
-                FathersName = employee.FathersName,
-                MothersName = employee.MothersName,
-                Gender = employee.Gender,
-                DateOfBirth = employee.DateOfBirth,
+            Citizen currentUser = new Citizen();
+            
+            currentUser.Afm = employee.Afm;
+            currentUser.Email = employee.Email;
+            currentUser.FirstName = employee.FirstName;
+            currentUser.LastName = employee.LastName;
+            currentUser.FathersName = employee.FathersName;
+            currentUser.MothersName = employee.MothersName;
+            currentUser.Gender = employee.Gender;
+            currentUser.DateOfBirth = employee.DateOfBirth;
+            currentUser.Ama = employee.Ama;
+            currentUser.Amka = employee.Amka;
+            currentUser.BirthLocation = employee.BirthLocation;
+            currentUser.Country = employee.Country;
+            currentUser.Nationality = employee.Nationality;
+            currentUser.IdNumber = employee.IdNumber;
+            currentUser.PassportNumber = employee.PassportNumber;
+            currentUser.Phone = employee.Phone;
+            currentUser.MobilePhone = employee.MobilePhone;
+            currentUser.AddressStreet = employee.AddressStreet;
+            currentUser.AddressNumber = employee.AddressNumber;
+            currentUser.City = employee.City;
+            currentUser.AreaCode = employee.AreaCode;
+            currentUser.County = employee.County;
+            currentUser.WorkPhone = employee.WorkPhone;
 
-                Ama = employee.Ama,
-                Amka = employee.Amka,
-                BirthLocation = employee.BirthLocation,
-                Country = employee.Country,
-                Nationality = employee.Nationality,
-                IdNumber = employee.IdNumber,
-                PassportNumber = employee.PassportNumber,
-                Phone = employee.Phone,
-                MobilePhone = employee.MobilePhone,
-                AddressStreet = employee.AddressStreet,
-                AddressNumber = employee.AddressNumber,
-                City = employee.City,
-                AreaCode = employee.AreaCode,
-                County = employee.County,
-                WorkPhone = employee.WorkPhone
-            };
             db.Citizens.Add(currentUser);
             db.SaveChanges();
             return RedirectToAction("SuccessfulRegister", "Home");
