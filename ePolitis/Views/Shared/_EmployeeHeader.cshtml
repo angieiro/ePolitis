@@ -95,33 +95,40 @@
     .dropdown1:hover .dropdown-content2 {
         display: block;
     }
+    #navbar_ul {
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */
+    }
 </style>
-<ul>
-    <li><a class="active" href="@Url.Action("Index","Employee")">Home</a></li>
-    <li class="dropdown1">
-        <a href="javascript:void(0)" class="dropbtn1">Υπηρεσίες ΟΑΕΔ</a>
-        <div class="dropdown-content1">
-            <a href="@Url.Action("OAEDEggrafiMitrwo","Employee")">Εγγραφή στο Μητρώο</a>
-            <a href="@Url.Action("OAEDEpidomaAnergias","Employee")">Δικαιολογητικά για επίδομα</a>
-            <a href="@Url.Action("OAEDUploadpage","Employee")">Upload Δικαιολογητικού</a>
-        </div>
-    </li>
-    <li class="dropdown1">
-        <a href="javascript:void(0)" class="dropbtn1">Υπηρεσίες ΙΚΑ</a>
-        <div class="dropdown-content1">
-            <a href="@Url.Action("IKAEkdosiAMA","Employee")">Δικαιολογητικά ΑΜΑ</a>
-            <a href="@Url.Action("IKAEkdosiVivliariouYgeias","Employee")">Έκδοση Βιβλιαρίου</a>
-        </div>
-    </li>
-    <li class="dropdown1" style="float:right">
-        <a href="javascript:void(0)" class="dropbtn1">Λογαριασμός</a>
-        <div class="dropdown-content2">
-            <a href="@Url.Action("Index","Employee")">Προσωπικά στοιχεία</a>
-            <a href="@Url.Action("PersonalInfoUpdate", "Employee")">Επεξεργασία προσωπικών στοιχείων</a>
-            <a href="@Url.Action("SignOut","Home")">Έξοδος</a>
-        </div>
-    </li>
-</ul>
+<div id="navbar_ul">
+    <ul>
+        <li><a class="active" href="@Url.Action("Index","Employee")">Home</a></li>
+        <li class="dropdown1">
+            <a href="javascript:void(0)" class="dropbtn1">Υπηρεσίες ΟΑΕΔ</a>
+            <div class="dropdown-content1">
+                <a href="@Url.Action("OAEDEggrafiMitrwo","Employee")">Εγγραφή στο Μητρώο</a>
+                <a href="@Url.Action("OAEDEpidomaAnergias","Employee")">Δικαιολογητικά για επίδομα</a>
+                <a href="@Url.Action("OAEDUploadpage","Employee")">Upload Δικαιολογητικού</a>
+            </div>
+        </li>
+        <li class="dropdown1">
+            <a href="javascript:void(0)" class="dropbtn1">Υπηρεσίες ΙΚΑ</a>
+            <div class="dropdown-content1">
+                <a href="@Url.Action("IKAEkdosiAMA","Employee")">Δικαιολογητικά ΑΜΑ</a>
+                <a href="@Url.Action("IKAEkdosiVivliariouYgeias","Employee")">Έκδοση Βιβλιαρίου</a>
+            </div>
+        </li>
+        <li class="dropdown1" style="float:right">
+            <a href="javascript:void(0)" class="dropbtn1">Λογαριασμός</a>
+            <div class="dropdown-content2">
+                <a href="@Url.Action("Index","Employee")">Προσωπικά στοιχεία</a>
+                <a href="@Url.Action("PersonalInfoUpdate", "Employee")">Επεξεργασία προσωπικών στοιχείων</a>
+                <a href="@Url.Action("SignOut","Home")">Έξοδος</a>
+            </div>
+        </li>
+    </ul>
+</div>
 
 
 @*old navbar*@

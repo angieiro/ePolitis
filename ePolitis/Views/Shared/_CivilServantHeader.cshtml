@@ -95,14 +95,22 @@
     .dropdown1:hover .dropdown-content2 {
         display: block;
     }
-</style>
-<ul>
-    <li><a class="active" href="@Url.Action("Index","CivilServant")">Home</a></li>
+    #navbar_ul {
+        position: fixed; /* Set the navbar to fixed position */
+        top: 0; /* Position the navbar at the top of the page */
+        width: 100%; /* Full width */
+    }
 
-    <li class="active dropdown1" style="float:right">
+</style>
+<div id="navbar_ul">
+    <ul>
+        <li><a class="active" href="@Url.Action("Index","CivilServant")">Home</a></li>
+
+        <li class="active dropdown1" style="float:right">
             <a href="@Url.Action("SignOut","Home")">Έξοδος</a>
-    </li>
-</ul>
+        </li>
+    </ul>
+</div>
 
 
 @*<div class="dropdown" style="float:right;">
