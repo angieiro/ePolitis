@@ -86,7 +86,9 @@
                             display: none;
                         }
                     </style>
-                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                    
+                    @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @Value = @Model.DateOfBirth.ToString("yyyy-MM-dd"), @class = "form-control"} })
+
                     @*@Html.TextBox("", String.Format("{0:d}", Model.DateOfBirth.ToShortDateString()),
                     new { @class = "datefield form-control", type = "date" })*@
                     <span class="input-group-addon">
@@ -277,4 +279,5 @@
     $("#Afm").on("click", function () {
         alert("Η αλλαγή του πεδίου ΑΦΜ δεν είναι εφικτή");
     });
+
 </script>
