@@ -229,7 +229,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control"@*, @disabled = "disabled"*@ } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -262,20 +262,21 @@
     </div>
 }
 
-@*<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
-        $('#DateOfBirth').datepicker({
-            dateFormat: "dd/mm/yy",
-            showStatus: true,
-            showWeeks: true,
-            currentText: 'Now',
-            autoSize: true,
-            gotoCurrent: true,
-            showAnim: 'blind',
-            highlightWeek: true
-        });
-    });
-</script>*@
+    //$(document).ready(function () {
+    //    $('#DateOfBirth').datepicker({
+    //        dateFormat: "dd/mm/yy",
+    //        showStatus: true,
+    //        showWeeks: true,
+    //        currentText: 'Now',
+    //        autoSize: true,
+    //        gotoCurrent: true,
+    //        showAnim: 'blind',
+    //        highlightWeek: true
+    //    });
+    //});
+    $("#Afm").attr("required", "true");
+</script>

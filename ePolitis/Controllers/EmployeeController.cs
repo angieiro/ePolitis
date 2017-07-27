@@ -19,14 +19,15 @@ namespace ePolitis.Controllers
             return View(Session["employeeUser"]);
         }
 
-        public ActionResult PersonalInfoCreate(User user)
+        public ActionResult PersonalInfoCreate(/*User user*/)
         {
-            Citizen currentUser = new Citizen()
+            Citizen employeeUser = new Citizen()
             {
-                Email = user.Email
+                Email = (string)Session["Email"]
             };
-
-            return View(currentUser);
+            Session.Add("employeeUser", employeeUser);
+            //return View(currentUser);
+            return View(Session["employeeUser"]);
         }
 
         
@@ -37,7 +38,7 @@ namespace ePolitis.Controllers
             Citizen currentUser = new Citizen()
             {
                 Afm = employee.Afm,
-                Email = employee.Email,
+                //Email = employee.Email,
                 FirstName = employee.FirstName,
                 LastName = employee.LastName,
                 FathersName = employee.FathersName,

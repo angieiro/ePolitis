@@ -20,23 +20,25 @@ namespace ePolitis.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(User user)
+        public ActionResult RegisterSubmit(User user)
         {
-
             if (db.Users.Find(user.Email) == null)
             {
                 db.Users.Add(user);
+                Session.Add("Email", user.Email);
+                Session.Add("user", user);
                 db.SaveChanges();
                 if (user.IsUnemployed)
                 {
-                    return RedirectToAction("PersonalInfoCreate", "Unemployed", user);
+                    return RedirectToAction("PersonalInfoCreate", "Unemployed");
                 }
                 else
                 {
-                    return RedirectToAction("PersonalInfoCreate", "Employee", user);
+                    //Session.Add("employeeUser", employeeUser);
+                    return RedirectToAction("PersonalInfoCreate", "Employee");
 
                 }
-
+                
             }
             else
             {
@@ -108,6 +110,8 @@ namespace ePolitis.Controllers
 
         public ActionResult SuccessfulRegister()
         {
+            FormsAuthentication.SignOut();
+            Session.Abandon();
             return View();
         }
 

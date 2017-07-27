@@ -19,47 +19,51 @@ namespace ePolitis.Controllers
             return View(Session["unemployeeUser"]);
         }
 
-        public ActionResult PersonalInfoCreate(User user)
+        public ActionResult PersonalInfoCreate(/*User user*/)
         {
-            Citizen currentUser = new Citizen()
+            Citizen unemployeeUser = new Citizen()
             {
-                Email = user.Email
+                Email = (string)Session["Email"]
             };
-            return View(currentUser);
+            Session.Add("unemployeeUser", unemployeeUser);
+            //return View(currentUser);
+            return View(Session["unemployeeUser"]);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PersonalInfoCreate(Citizen unemployed)
         {
-
-            Citizen currentUser = new Models.Citizen()
-            {
-                Email = unemployed.Email,
-                FirstName = unemployed.FirstName,
-                LastName = unemployed.LastName,
-                FathersName = unemployed.FathersName,
-                MothersName = unemployed.MothersName,
-                Gender = unemployed.Gender,
-                DateOfBirth = unemployed.DateOfBirth,
-                Afm = unemployed.Afm,
-                Ama = unemployed.Ama,
-                Amka = unemployed.Amka,
-                BirthLocation = unemployed.BirthLocation,
-                Country = unemployed.Country,
-                Nationality = unemployed.Nationality,
-                IdNumber = unemployed.IdNumber,
-                PassportNumber = unemployed.PassportNumber,
-                Phone = unemployed.Phone,
-                MobilePhone = unemployed.MobilePhone,
-                AddressStreet = unemployed.AddressStreet,
-                AddressNumber = unemployed.AddressNumber,
-                City = unemployed.City,
-                AreaCode = unemployed.AreaCode,
-                County = unemployed.County,
-                AmOaed = unemployed.AmOaed,
-                CardOaed = unemployed.CardOaed
-            };
+            //Citizen currentUser = db.Citizens.SingleOrDefault(e => e.Email == unemployed.Email);
+            Citizen currentUser = new Citizen();
+            //{
+            //    Email = unemployed.Email
+            //}
+            currentUser.Email = unemployed.Email;
+            currentUser.FirstName = unemployed.FirstName;
+            currentUser.LastName = unemployed.LastName;
+            currentUser.FathersName = unemployed.FathersName;
+            currentUser.MothersName = unemployed.MothersName;
+            currentUser.Gender = unemployed.Gender;
+            currentUser.DateOfBirth = unemployed.DateOfBirth;
+            currentUser.Afm = unemployed.Afm;
+            currentUser.Ama = unemployed.Ama;
+            currentUser.Amka = unemployed.Amka;
+            currentUser.BirthLocation = unemployed.BirthLocation;
+            currentUser.Country = unemployed.Country;
+            currentUser.Nationality = unemployed.Nationality;
+            currentUser.IdNumber = unemployed.IdNumber;
+            currentUser.PassportNumber = unemployed.PassportNumber;
+            currentUser.Phone = unemployed.Phone;
+            currentUser.MobilePhone = unemployed.MobilePhone;
+            currentUser.AddressStreet = unemployed.AddressStreet;
+            currentUser.AddressNumber = unemployed.AddressNumber;
+            currentUser.City = unemployed.City;
+            currentUser.AreaCode = unemployed.AreaCode;
+            currentUser.County = unemployed.County;
+            currentUser.AmOaed = unemployed.AmOaed;
+            currentUser.CardOaed = unemployed.CardOaed;
+              
 
             db.Citizens.Add(currentUser);
             db.SaveChanges();
@@ -78,7 +82,7 @@ namespace ePolitis.Controllers
         public ActionResult PersonalInfoUpdate(Citizen unemployed)
         {
 
-            Citizen currentUser = db.Citizens.SingleOrDefault(e => e.Email == unemployed.Email);
+            Citizen currentUser = db.Citizens.FirstOrDefault(e => e.Email == unemployed.Email);
             currentUser.FirstName = unemployed.FirstName;
             currentUser.LastName = unemployed.LastName;
             currentUser.FirstName = unemployed.FirstName;
